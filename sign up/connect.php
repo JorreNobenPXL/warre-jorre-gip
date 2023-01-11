@@ -21,7 +21,7 @@
     VALUES ('$email', '$psw', '$psw_repeat')"; //insert values into db
 
     if ($conn->query($sql) === TRUE) {
-        header("Location:http://localhost:3000/index.html"); //go to page
+        header("Location:http://localhost:3000/website/index.html"); //go to page
     } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
     }

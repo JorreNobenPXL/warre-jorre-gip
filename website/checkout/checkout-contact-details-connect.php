@@ -7,7 +7,7 @@
 
     $lname =$_POST['lname'];
     $fname =$_POST['fname'];
-    $email = $_POST['email'];
+    $useremail = $_POST['useremail'];
     $verify_email = $_POST['verify_email'];
     $phonenumber = $_POST['phonenumber'];
     

@@ -5,7 +5,7 @@
     $password = "Warre6789!";
     $dbname = "gip2023";
 
-    $email = $_POST['email'];
+    $useremail = $_POST['useremail'];
     $psw = $_POST['psw'];
     $psw_repeat = $_POST['psw_repeat'];
     
@@ -17,8 +17,8 @@
         die("Connection failed: " . $conn->connect_error);
   }
   
-  $sql = "INSERT INTO signup (email, psw, psw_repeat)  
-    VALUES ('$email', '$psw', '$psw_repeat')"; //insert values into db
+  $sql = "INSERT INTO signup (useremail, psw, psw_repeat)  
+    VALUES ('$useremail', '$psw', '$psw_repeat')"; //insert values into db
 
     if ($conn->query($sql) === TRUE) {
         header("Location:http://localhost:3000/website/index.html"); //go to page

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/Background_App"
+    android:background="@drawable/background"
     tools:context=".MainActivity">
     
     <TextView
@@ -57,10 +57,21 @@
         android:layout_height="wrap_content"
         android:id="@+id/login"
         android:layout_below="@+id/password"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="210dp"
         android:text="LOGIN"
         android:backgroundTint="@color/design_default_color_secondary"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="20dp"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/signup"
+        android:layout_below="@+id/password"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="100dp"
+        android:text="SIGN UP"
+        android:backgroundTint="@color/design_default_color_secondary"
         />
 
     <TextView

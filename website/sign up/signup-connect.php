@@ -3,7 +3,7 @@
     $servername = "193.121.129.31";
     $username = "warre";
     $password = "Warre6789!";
-    $dbname = "signup";
+    $dbname = "gip2023";
 
     $email = $_POST['email'];
     $psw = $_POST['psw'];

@@ -11,7 +11,7 @@
   session_start();
 
     if(!isset($_SESSION['useremail'])){
-    header('location:http://localhost:3000/website/login system/login.php');
+    header('location:http://localhost:3000/webiste/login_system/login.php');
     }
 
 ?>
@@ -30,7 +30,7 @@
    <div class="content">
       <h3>Welcome!</h3>
       <p>your email : <span><?php echo $_SESSION['useremail']; ?></span></p>
-      <button><a href="login system/logout.php" class="logout">logout</a></button>
+      <button><a href="login_system/logout.php" class="logout">logout</a></button>
    </div>
 </div>
 

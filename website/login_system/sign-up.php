@@ -26,13 +26,14 @@
         if($psw != $psw_repeat){
           $error[] = 'password not mathched!';
         }else{
-          $insert = "INSERT INTO signup(useremail, psw) VALUES('$useremail','$psw')";
-          mysqli_query($conn, $insert);
-          header('location:http://localhost:3000/website/index.html');
+            $insert = "INSERT INTO signup(useremail, psw) VALUES('$useremail','$psw')";
+            mysqli_query($conn, $insert);
+            header('location:http://localhost:3000/website/login_system/login.php');
+           }
         }
-      }
-
   }
+
+  
 
 ?>
 
@@ -75,8 +76,8 @@
             <label>
               <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px">Remember me
             </label>
+            
         
-            <!--<p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>-->
             <!-- submit button -->
             <div class="submit">
               <input type="submit" name="submit" class="form-btn" value="Sign Up">

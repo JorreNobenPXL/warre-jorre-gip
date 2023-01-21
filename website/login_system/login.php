@@ -23,7 +23,7 @@
         $_SESSION['useremail'] = $useremail;
         header('location:http://localhost:3000/website/header.php');
     }else{
-        $error[] = 'incorrect password or email.';
+        $error[] = 'Incorrect password or email.';
     }
 
     }

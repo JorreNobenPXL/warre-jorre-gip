@@ -21,10 +21,10 @@
     $result = mysqli_query($conn, $select);
 
       if(mysqli_num_rows($result) > 0){
-        $error[] = 'user already exist';
+        $error[] = 'User already exist';
       }else{
         if($psw != $psw_repeat){
-          $error[] = 'password not mathched!';
+          $error[] = 'Password not mathched!';
         }else{
             $insert = "INSERT INTO signup(useremail, psw) VALUES('$useremail','$psw')";
             mysqli_query($conn, $insert);

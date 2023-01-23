@@ -19,9 +19,8 @@ form {
 }
 
 .box {
-    box-sizing: border-box;
     border: 10px solid blue;
-    
+    width: 40%;
 }
 
 h1 {
@@ -64,6 +63,7 @@ label, input{
     justify-content: center;
     align-items: center;
     color: #ffffff;
+    font-size: 10px;
 }
 
 .form-btn {
@@ -74,6 +74,7 @@ label, input{
     cursor: pointer;
     transition: all 0.3 ease 0S;
     font-weight: bold;
+    margin-top: 10px;
 }
 
 .form-btn:hover {
@@ -81,5 +82,10 @@ label, input{
 }
 
 .text-register {
+    font-size: 15px;
+}
+
+.text-register a {
     color: #00aeff;
+    font-size: 15px;
 }

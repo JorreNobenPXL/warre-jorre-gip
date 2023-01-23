@@ -24,15 +24,15 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    
-<div class="container">
-   <div class="content">
-      <h3>Welcome!</h3>
-      <p>your email : <span><?php echo $_SESSION['useremail']; ?></span></p>
-      <button><a href="login_system/logout.php" class="logout">logout</a></button>
+<body> 
+   <div>
+      <div>
+         <h3>Welcome!</h3>
+         <p>Your email : <span><?php echo $_SESSION['useremail']; ?></span></p>
+         <button><a href="login_system/logout.php" class="logout">logout</a></button>
+      </div>
    </div>
-</div>
 
 </body>
 </html>
+

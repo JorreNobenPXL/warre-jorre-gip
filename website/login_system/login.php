@@ -21,9 +21,9 @@
 
     if(mysqli_num_rows($result) > 0){
         $_SESSION['useremail'] = $useremail;
-        header('location:http://localhost:3000/website/header.php');
+        header('location:http://localhost:3000/website/home-logged-in.php');
     }else{
-        $error[] = 'Incorrect email er password!';
+        $error[] = 'Incorrect email or password!';
     }
 
     }
@@ -66,7 +66,7 @@
                 </div>
                 <!-- no account register/signup -->
                 <div class="register">
-                    <p>Don't have an account? <a class="text-register" href="sign-up.php">Register now</a></p>
+                    <p class="text-register">Don't have an account? <a href="sign-up.php">Register now</a></p>
                 </div>
 
             </div>

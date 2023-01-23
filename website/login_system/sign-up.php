@@ -82,7 +82,7 @@
               <input type="submit" name="submit" class="form-btn" value="Sign Up">
             </div>
             <div class="login">
-                    <p>Have an account? <a class="text-login" href="login.php">Login now</a></p>
+                    <p class="text-login">Have an account?<a href="login.php">Login now</a></p>
                 </div>
           </div>
         </form>

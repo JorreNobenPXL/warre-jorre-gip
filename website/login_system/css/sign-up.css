@@ -19,8 +19,8 @@ form {
 }
 
 .box {
-    box-sizing: border-box;
     border: 10px solid blue;
+    width: 40%;
 }
 
 h1 {
@@ -73,6 +73,7 @@ label, input{
     cursor: pointer;
     transition: all 0.3 ease 0S;
     font-weight: bold;
+    margin-top: 10px;
 }
 
 .form-btn:hover {
@@ -80,5 +81,10 @@ label, input{
 }
 
 .text-login {
+    font-size: 15px;
+}
+
+.text-login a {
     color: #00aeff;
+    font-size: 15px;
 }

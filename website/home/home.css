@@ -8,7 +8,7 @@
     background-color: #24252a;
 }
 
-li, a , button {
+li, a , .nav_button {
     font-family: 'Roboto Mono', monospace;
     font-weight: 500;
     font-size: 16px;
@@ -45,7 +45,7 @@ header {
     color: #0088A9;
 }
 
-button {
+.nav_button {
     padding: 9px 25px;
     background-color: rgba(0,136,169,1);
     border: none;
@@ -54,6 +54,6 @@ button {
     transition: all 0.3 ease 0S;
 }
 
-button:hover {
+.nav_button:hover {
     background-color: rgba(0,136,169,0.8);
 }

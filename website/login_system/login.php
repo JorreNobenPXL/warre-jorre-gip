@@ -1,9 +1,9 @@
 <?php
 
-  $servername = "193.121.129.31";
-  $username = "warre";
-  $password = "Warre6789!";
-  $dbname = "gip2023";
+    $servername = "193.121.129.31";
+    $username = "host";
+    $password = "GIP-2022";
+    $dbname = "gip2023";
 
   //database connection
   $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -19,11 +19,11 @@
 
     $result = mysqli_query($conn, $select);
 
-    if(mysqli_num_fields($result) > 0){
+    if(mysqli_num_rows($result) > 0){
         $_SESSION['useremail'] = $useremail;
         header('location:http://localhost:3000/website/header.php');
     }else{
-        $error[] = 'Incorrect password or email.';
+        $error[] = 'Incorrect email er password!';
     }
 
     }
@@ -40,11 +40,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
     <main>
         <form action="" method="post" id="loginform" name="loginform">
-            <div class="container">
+            <div class="box">
                 <h1>Login Now</h1>
                 <?php
                     if(isset($error)){
@@ -54,10 +55,10 @@
                     }
                 ?>
                 <!-- email -->
-                <label for="email"><b>Email</b></label>
+                <label class="label_email" for="email"><b>Email</b></label>
                 <input type="email" id="email" name="useremail" required>
                 <!-- password -->
-                <label for="psw"><b>Password</b></label>
+                <label class="label_psw" for="psw"><b>Password</b></label>
                 <input type="password" id="psw" name="psw" required>
                 <!-- submit button -->
                 <div class="submit">
@@ -65,7 +66,7 @@
                 </div>
                 <!-- no account register/signup -->
                 <div class="register">
-                    <p>Don't have an account? <a href="sign-up.php">Register now</a></p>
+                    <p>Don't have an account? <a class="text-register" href="sign-up.php">Register now</a></p>
                 </div>
 
             </div>

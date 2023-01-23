@@ -1,9 +1,9 @@
 <?php
 
-  $servername = "193.121.129.31";
-  $username = "warre";
-  $password = "Warre6789!";
-  $dbname = "gip2023";
+   $servername = "193.121.129.31";
+   $username = "host";
+   $password = "GIP-2022";
+   $dbname = "gip2023";
 
   //database connection
   $conn = mysqli_connect($servername, $username, $password, $dbname);

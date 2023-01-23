@@ -1,8 +1,8 @@
 <?php
 
   $servername = "193.121.129.31";
-  $username = "warre";
-  $password = "Warre6789!";
+  $username = "host";
+  $password = "GIP-2022";
   $dbname = "gip2023";
 
   //database connection

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/karrewiel"
+    android:background="@color/black"
     tools:context=".Activity3">
 
     <TextView
@@ -20,18 +20,21 @@
         />
 
     <EditText
+        android:id="@+id/usernamesign"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/usernamesign"
         android:layout_below="@+id/signupp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:background="#30ffffff"
-        android:hint="Username"
-        android:textColorHint="@color/white"
-        android:layout_margin="10dp"
-        android:padding="20dp"
         android:drawableLeft="@drawable/ic_baseline_person_outline_24"
         android:drawablePadding="20dp"
-        />
+        android:hint="Username"
+        android:padding="20dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
 
     <EditText
         android:id="@+id/passwordsign"
@@ -58,7 +61,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/passwordsign"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:background="#30ffffff"
@@ -81,13 +84,50 @@
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:background="#30ffffff"
-        android:drawableLeft="@drawable/ic_baseline_info_24"
+        android:drawableLeft="@drawable/ic_baseline_email_24"
         android:drawablePadding="20dp"
         android:hint="Email Adress"
         android:padding="20dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:inputType="textEmailAddress"
+        />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Name"
+        android:text="KARREWIEL"
+        android:textColor="@color/white"
+        android:textSize="40dp"
+        android:layout_marginTop="45dp"
+        android:layout_below="@id/confirmsignup"
+        android:layout_centerHorizontal="true"
+
+        />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/AdressName"
+        android:layout_marginTop="95dp"
+        android:text="Zapstraat 38"
+        android:textColor="@color/white"
+        android:textSize="35dp"
+        android:layout_below="@+id/confirmsignup"
+        android:layout_centerHorizontal="true"
+        />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/AdressCode"
+        android:text="3730 Hoeselt"
+        android:textColor="@color/white"
+        android:textSize="35dp"
+        android:layout_below="@+id/confirmsignup"
+        android:layout_marginTop="130dp"
+        android:layout_centerHorizontal="true"
         />
 
     <com.google.android.material.button.MaterialButton

@@ -29,7 +29,7 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
         }else{
             $insert = "INSERT INTO signup(username, useremail, psw) VALUES('$username', '$useremail','$psw')";
             mysqli_query($conn, $insert);
-            header('location:http://localhost:3000/website/login_system/login.php');
+            header('location:http://localhost:3000/website-localhost/login_system/login.php');
            }
         }
   }

@@ -12,6 +12,6 @@
     session_unset();
     session_destroy();
 
-    header('location:http://localhost:3000/website/index.html');
+    header('location:http://localhost:3000/website-localhost/index.html');
 
 ?>

@@ -21,7 +21,7 @@
 
     if(mysqli_num_rows($result) > 0){
         $_SESSION['useremail'] = $useremail;
-        header('location:http://localhost:3000/website/home-logged-in.php');
+        header('location:http://localhost:3000/website-localhost/home-logged-in.php');
     }else{
         $error[] = 'Incorrect email or password!';
     }

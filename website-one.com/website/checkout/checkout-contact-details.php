@@ -1,9 +1,9 @@
 <?php
 
-  $servername = "193.121.129.31";
-  $username = "host";
+  $servername = "iict.be.mysql";
+  $username = "iict_begip2023";
   $password = "GIP-2022";
-  $dbname = "gip2023";
+  $dbname = "iict_begip2023";
 
   //database connection
   $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -28,7 +28,7 @@
         }else{
             $insert = "INSERT INTO checkout(lname, fname, useremail, phone) VALUES('$lname', '$fname', '$useremail','$phone')";
             mysqli_query($conn, $insert);
-            header('location:http://localhost:3000/website/index.html');
+            header('location:https://iict.be/website/index.html');
            }
         }
   }

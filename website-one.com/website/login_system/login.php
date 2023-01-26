@@ -45,7 +45,7 @@
 <body>
     <main>
         <form action="" method="post" id="loginform" name="loginform">
-            <div class="box">
+            <div>
                 <h1>Login Now</h1>
                 <?php
                     if(isset($error)){
@@ -60,9 +60,15 @@
                 <!-- password -->
                 <label class="label_psw" for="psw"><b>Password</b></label>
                 <input type="password" id="psw" name="psw" required>
-                <!-- submit button -->
-                <div class="submit">
-                    <input type="submit" name="submit" class="form-btn" value="Login">
+                <div class="buttons">
+                    <!-- submit button -->
+                     <div class="submit">
+                    <input type="submit" name="submit" class="form-btn" value="Login in">
+                    </div>
+                    <!-- cancel button -->
+                    <div class="cancel">
+                    <a class="form-btn-cancel" href="https://iict.be/website/home/home.html">Cancel</a>
+                    </div>
                 </div>
                 <!-- no account register/signup -->
                 <div class="register">

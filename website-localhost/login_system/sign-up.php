@@ -32,9 +32,7 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
             header('location:http://localhost:3000/website-localhost/login_system/login.php');
            }
         }
-  }
-
-  
+  }  
 
 ?>
 
@@ -54,7 +52,7 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
       
     <main>
       <form action="" method="post" id="signupform" name="signupform">
-          <div class="box">
+          <div>
             <h1>Sign Up</h1>
             <p>Please fill in this form to create an account.</p>
             <!-- error code -->
@@ -77,13 +75,19 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
             <!-- repeat password -->
             <label for="psw-repeat"><b>Confirm Password</b></label>
             <input type="password" id="psw_repeat" name="psw_repeat" required>
-            <!-- submit button -->
-            <div class="submit">
-              <input type="submit" name="submit" class="form-btn" value="Sign Up">
+            <div class="buttons">
+              <!-- submit button -->
+              <div class="submit">
+                <input type="submit" name="submit" class="form-btn" value="Sign Up">
+              </div>
+              <!-- cancel button -->
+              <div class="cancel">
+                <a class="form-btn-cancel" href="http://localhost:3000/website-localhost/home/home.html">Cancel</a>
+              </div>
             </div>
             <div class="login">
                     <p class="text-login">Have an account?<a href="login.php">Login now</a></p>
-                </div>
+            </div>
           </div>
         </form>
       </main>

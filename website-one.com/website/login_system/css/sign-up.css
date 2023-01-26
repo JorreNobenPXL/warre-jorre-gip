@@ -8,7 +8,7 @@
     background-color: #24252a;
     font-family: 'Roboto Mono', monospace;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 15x;
 }
 
 form {
@@ -18,17 +18,12 @@ form {
     color: #ffffff;
 }
 
-.box {
-    border: 10px solid blue;
-    width: 40%;
-}
-
 h1 {
     display: flex;
     justify-content: center;
     align-items: center;
     color: #ffffff;
-    font-size: 40px;
+    font-size: 30px;
 }
 
 p {
@@ -45,7 +40,7 @@ p {
     color: #ff0000;
 }
 
-label, input{
+label, input {
     display: flex;
     justify-content: center;
     align-items: center ;
@@ -65,6 +60,16 @@ label, input{
     color: #ffffff;
 }
 
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit, .cancel {
+    display: inline-flex;
+}
+
 .form-btn {
     padding: 9px 25px;
     background-color: rgba(0,136,169,1);
@@ -77,7 +82,24 @@ label, input{
 }
 
 .form-btn:hover {
-    background-color: rgb(5, 167, 207);
+    background-color: rgb(0, 204, 255);
+}
+
+.form-btn-cancel {
+    padding: 9px 27px;
+    background-color: rgb(169, 0, 0);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3 ease 0S;
+    font-weight: bold;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #000000;
+}
+
+.form-btn-cancel:hover {
+    background-color: rgb(255, 0, 0);
 }
 
 .text-login {

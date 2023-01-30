@@ -6,6 +6,8 @@
     margin: 0;
     padding: 0;
     background-color: #24252a;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 500;
 }
 
 li, a , .nav_button {
@@ -57,4 +59,13 @@ header {
 
 .nav_button:hover {
     background-color: rgba(0,136,169,0.8);
+}
+
+.footer-copyright {
+    height: 3rem;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(212, 212, 212);
 }

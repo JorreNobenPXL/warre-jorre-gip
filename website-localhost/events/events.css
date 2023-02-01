@@ -6,6 +6,8 @@
     margin: 0;
     padding: 0;
     background-color: #24252a;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 500;
 }
 
 li, a , .nav_button {
@@ -20,8 +22,7 @@ header {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 30px 10%;
-    border: 2px solid yellow;
+    padding: 25px 10%;
 }
 
 .logo {
@@ -57,6 +58,16 @@ header {
 
 .nav_button:hover {
     background-color: rgba(0,136,169,0.8);
+}
+
+.footer-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto;
 }
 
 .footer-copyright {

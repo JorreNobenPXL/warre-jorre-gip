@@ -61,7 +61,7 @@ header {
 }
 
 .footer-section {
-    min-height: 100vh;
+    min-height: 50vh;
     display: flex;
     flex-direction: column;
 }
@@ -77,4 +77,39 @@ footer {
     justify-content: center;
     align-items: center;
     background-color: rgb(212, 212, 212);
+}
+
+.phone {
+    display: flex;
+    margin: .5rem 5rem;
+    justify-content: center;
+    
+}
+
+.text-1 {
+    display: flex;
+    justify-content: center;
+    display: inline-block;
+    color: #ffffff;
+    width: 700px;
+    height: 300px;
+    margin: 150px 10px;
+    font: 1000 1.5em/1.2 Lato,sans-serif;
+}
+
+.text-1 h1 {
+    display: flex;
+    justify-content: center;
+}
+
+.text-1 h3 {
+    display: flex;
+    justify-content: center;
+}
+
+.phone-pic {
+    width: 250px;
+    height: 600px;
+    margin-left: 200px;
+    margin-top: 2.5rem;
 }

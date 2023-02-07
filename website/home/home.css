@@ -60,25 +60,6 @@ header {
     background-color: rgba(0,136,169,0.8);
 }
 
-.footer-section {
-    min-height: 50vh;
-    display: flex;
-    flex-direction: column;
-}
-
-footer {
-    margin-top: auto;
-}
-
-.footer-copyright {
-    height: 3rem;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(212, 212, 212);
-}
-
 .phone {
     display: flex;
     margin: .5rem 5rem;
@@ -87,7 +68,6 @@ footer {
 }
 
 .text-1 {
-    display: flex;
     justify-content: center;
     display: inline-block;
     color: #ffffff;
@@ -113,3 +93,51 @@ footer {
     margin-left: 200px;
     margin-top: 2.5rem;
 }
+
+.text-up-events {
+    border: 2px solid red;
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+    color: #ffffff;
+    font-size: large;
+}
+
+.events{
+    border: 2px solid yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.event_img {
+    border: 2px solid green;
+    display: inline-table;
+    margin-top: 40px;
+    padding: 10px;
+}
+
+/* -------------------------------------------footer---------------------------------------- */
+
+.footer-section {
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto;
+}
+
+.footer-copyright {
+    height: 3rem;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(212, 212, 212);
+}
+
+
+
+

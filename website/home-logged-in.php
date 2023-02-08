@@ -1,9 +1,9 @@
 <?php
 
-   $servername = "iict.be.mysql";
-   $username = "iict_begip2023";
+   $servername = "193.121.129.31";
+   $username = "host";
    $password = "GIP-2022";
-   $dbname = "iict_begip2023";
+   $dbname = "gip2023";
 
    //database connection
    $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -11,7 +11,7 @@
   session_start();
 
     if(!isset($_SESSION['useremail'])){
-    header('location:https://iict.be/webiste/login_system/login.php');
+    header('location:http://193.121.129.31/webiste/login_system/login.php');
     }
 
 ?>

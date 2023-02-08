@@ -1,9 +1,9 @@
 <?php
 
-  $servername = "iict.be.mysql";
-  $username = "iict_begip2023";
+  $servername = "193.121.129.31";
+  $username = "host";
   $password = "GIP-2022";
-  $dbname = "iict_begip2023";
+  $dbname = "gip2023";
 
   //database connection
   $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -29,7 +29,7 @@
         }else{
             $insert = "INSERT INTO signup(username, useremail, psw) VALUES('$username', '$useremail','$psw')";
             mysqli_query($conn, $insert);
-            header('location:https://iict.be/website/login_system/login.php');
+            header('location:http://193.121.129.31/website/login_system/login.php');
            }
         }
   }
@@ -84,7 +84,7 @@
               </div>
               <!-- cancel button -->
               <div class="cancel">
-                <a class="form-btn-cancel" href="https://iict.be/website/home/home.html">Cancel</a>
+                <a class="form-btn-cancel" href="http://193.121.129.31/website/home/home.html">Cancel</a>
               </div>
             </div>
             <div class="login">

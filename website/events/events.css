@@ -18,6 +18,13 @@ li, a , .nav_button {
     text-decoration: none;
 }
 
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
 header {
     display: flex;
     justify-content: flex-end;
@@ -59,6 +66,12 @@ header {
 .nav_button:hover {
     background-color: rgba(0,136,169,0.8);
 }
+
+.text-events {
+    padding-top: 6rem;
+}
+
+/* -------------------------------------------footer---------------------------------------- */
 
 .footer-section {
     min-height: 50vh;

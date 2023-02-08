@@ -1,9 +1,9 @@
 <?php
 
-    $servername = "iict.be.mysql";
-    $username = "iict_begip2023";
+    $servername = "193.121.129.31";
+    $username = "host";
     $password = "GIP-2022";
-    $dbname = "iict_begip2023";
+    $dbname = "gip2023";
 
     //database connection
     $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -21,7 +21,7 @@
 
     if(mysqli_num_rows($result) > 0){
         $_SESSION['useremail'] = $useremail;
-        header('location:https://iict.be/website/home-logged-in.php');
+        header('location:http://193.121.129.31/website/home-logged-in.php');
     }else{
         $error[] = 'Incorrect email or password!';
     }
@@ -67,7 +67,7 @@
                     </div>
                     <!-- cancel button -->
                     <div class="cancel">
-                    <a class="form-btn-cancel" href="https://iict.be/website/home/home.html">Cancel</a>
+                    <a class="form-btn-cancel" href="http://193.121.129.31/website/home/home.html">Cancel</a>
                     </div>
                 </div>
                 <!-- no account register/signup -->

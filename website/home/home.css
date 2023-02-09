@@ -89,9 +89,10 @@ header {
     justify-content: center;
 }
 
-.text-1 h3 {
+.text-1 h4 {
     display: flex;
     justify-content: center;
+    margin-top: 1.5rem
 }
 
 .phone-pic {
@@ -102,27 +103,54 @@ header {
 }
 
 .text-up-events {
-    border: 2px solid red;
     display: flex;
     justify-content: center;
     margin-top: 150px;
     color: #ffffff;
     font-size: large;
+    text-transform: uppercase;
 }
 
 .events{
-    border: 2px solid yellow;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.event_img {
-    border: 2px solid green;
+.event-img {
     display: inline-table;
     margin-top: 40px;
-    padding: 10px;
+    padding: 10px 20px 0px;
+    border-radius: 10%;
 }
+
+.event-name {
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-more-events {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.btn-more-events a {
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: .5rem 3.5rem;
+    background-color: #0088A9;
+    display: inline-flex;
+    align-items: center;
+}
+
+.btn-more-events a:hover {
+    background-color: rgba(0,136,169,0.8);
+}
+
 
 /* -------------------------------------------footer---------------------------------------- */
 

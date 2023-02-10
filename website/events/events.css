@@ -68,8 +68,31 @@ header {
 }
 
 .text-events {
-    padding-top: 6rem;
+    border: 2px solid yellow;
+    display: flex;
+    justify-content: center;
+    margin-top: 7rem;
+    color: #ffffff;
+    font-size: large;
+    text-transform: uppercase;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* -------------------------------------------footer---------------------------------------- */
 

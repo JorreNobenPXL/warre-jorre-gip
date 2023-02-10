@@ -151,14 +151,12 @@ header {
 }
 
 .sponsers{
-    border: 2px solid blue;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .sponser-img {
-    border: 2px solid yellow;
     display: inline-table;
     margin: 50px 0px;
     padding: 10px 20px;
@@ -180,7 +178,7 @@ header {
 }
 
 .auto-limburg-img {
-    width: 200px;
+    width: 250px;
     height: 80px;
 }
 
@@ -188,18 +186,6 @@ header {
     width: 100px;
     height: 110px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* -------------------------------------------footer---------------------------------------- */
 

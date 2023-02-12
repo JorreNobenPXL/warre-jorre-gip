@@ -43,6 +43,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout</title>
+    <link rel="icon" href="images/logo_tab.png">
+    <link rel="stylesheet" href="checkout.css">
 </head>
 <body>
     <main>
@@ -75,14 +77,19 @@
               <input type="text" id="phone" name="phone" required>
               <!--checkbox  -->
               <label>
-                <input type="checkbox" name="checkbox-tp" id="checkbox-tp" required>I have read and accept the <a href="#" style="color:dodgerblue">Terms & Privacy</a>.
+                <input type="checkbox" name="checkbox-tp" id="checkbox-tp" required>I have read and accept the <a href="#" style="color:dodgerblue">Terms & Privacy.</a>
               </label>
-              
               <p>*required</p>
-              <!-- submit button -->
-              <div class="submit">
-                <input type="submit" name="checkout" class="form-btn" value="Go to payment">
-              </div>
+              <div class="buttons">
+                    <!-- submit button -->
+                     <div class="submit">
+                    <input type="submit" name="submit" class="form-btn" value="Go To Payment">
+                    </div>
+                    <!-- cancel button -->
+                    <div class="cancel">
+                    <a class="form-btn-cancel" href="http://193.121.129.31/website/home/home.html">Cancel</a>
+                    </div>
+                </div>
             </div>
           </form>
         </main>

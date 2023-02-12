@@ -12,6 +12,6 @@
     session_unset();
     session_destroy();
 
-    header('location:http://193.121.129.31/website/index.html');
+    header('location:http://193.121.129.31/website/home/home.html');
 
 ?>

@@ -68,31 +68,55 @@ header {
 }
 
 .text-events {
-    border: 2px solid yellow;
     display: flex;
     justify-content: center;
     margin-top: 7rem;
     color: #ffffff;
-    font-size: large;
+    font-size: 175%;
     text-transform: uppercase;
 }
 
+.events {
+    margin-top: 4rem;
+}
 
+.event {
+    margin: 0rem 15rem;
+    display: flex;
+}
 
+.event-img {
+    margin-right: 2.5rem;
+}
 
+.event-details {
+    display: flex;
+    flex-direction: column;
+}
 
+.event-text {
+    flex: 1;
+}
 
+.event-text h1, .event-text h3 {
+    color: #ffffff;
+}
 
+.buy-ticket {
+    padding: 8px 25px;
+    background-color: rgba(0,136,169,1);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: bold;
+    transition: all 0.3 ease 0S;
+}
 
-
-
-
-
-
-
-
-
-
+.buy-ticket:hover {
+    background-color: rgba(0,136,169,0.8);
+}
 
 /* -------------------------------------------footer---------------------------------------- */
 

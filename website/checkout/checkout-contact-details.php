@@ -19,18 +19,17 @@
     $phone = mysqli_real_escape_string($conn, $_POST['phone']);
     $checkbox_tp = mysqli_real_escape_string($conn, $_POST['checkbox-tp']);
 
-
-      if($checkbox_tp = 0){
-        $error[] = 'Accept the Terms & Privacy!';
+    if($checkbox_tp = 0){
+      $error[] = 'Accept the Terms & Privacy!';
+    }else{
+      if($useremail != $verify_email){
+        $error[] = 'Email not mathched!';
       }else{
-        if($useremail != $verify_email){
-          $error[] = 'Email not mathched!';
-        }else{
-            $insert = "INSERT INTO checkout(lname, fname, useremail, phone) VALUES('$lname', '$fname', '$useremail','$phone')";
-            mysqli_query($conn, $insert);
-            header('location:http://193.121.129.31/website/home/home.html');
-           }
+          $insert = "INSERT INTO checkout(lname, fname, useremail, phone) VALUES('$lname', '$fname', '$useremail','$phone')";
+          mysqli_query($conn, $insert);
+          header('location:http://193.121.129.31/website/home/home.html');
         }
+      }
   }
 
 ?>
@@ -82,8 +81,8 @@
               <p>*required</p>
               <div class="buttons">
                     <!-- submit button -->
-                     <div class="submit">
-                    <input type="submit" name="submit" class="form-btn" value="Get Ticket">
+                    <div class="checkout">
+                    <input type="submit" name="checkout" class="form-btn" value="Get Ticket">
                     </div>
                     <!-- cancel button -->
                     <div class="cancel">

@@ -28,7 +28,7 @@
         }else{
             $insert = "INSERT INTO checkout(lname, fname, useremail, phone) VALUES('$lname', '$fname', '$useremail','$phone')";
             mysqli_query($conn, $insert);
-            header('location:https://iict.be/website/index.html');
+            header('location:http://193.121.129.31/website/home/home.html');
            }
         }
   }
@@ -83,7 +83,7 @@
               <div class="buttons">
                     <!-- submit button -->
                      <div class="submit">
-                    <input type="submit" name="submit" class="form-btn" value="Go To Payment">
+                    <input type="submit" name="submit" class="form-btn" value="Get Ticket">
                     </div>
                     <!-- cancel button -->
                     <div class="cancel">

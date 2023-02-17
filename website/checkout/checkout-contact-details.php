@@ -18,16 +18,20 @@
     $verify_email = mysqli_real_escape_string($conn, $_POST['verify_email']);
     $phone = mysqli_real_escape_string($conn, $_POST['phone']);
     $checkbox_tp = mysqli_real_escape_string($conn, $_POST['checkbox-tp']);
+    $to_email = $useremail;
+    $subject = 'Your ticket!';
+    $message = 'This mail is sent because you ordered a ticket';
 
     if($checkbox_tp = 0){
       $error[] = 'Accept the Terms & Privacy!';
-    }else{
+    }else{ 
       if($useremail != $verify_email){
         $error[] = 'Email not mathched!';
       }else{
-          $insert = "INSERT INTO checkout(lname, fname, useremail, phone) VALUES('$lname', '$fname', '$useremail','$phone')";
-          mysqli_query($conn, $insert);
-          header('location:http://193.121.129.31/website/home/home.html');
+        $insert = "INSERT INTO checkout(lname, fname, useremail, phone) VALUES('$lname', '$fname', '$useremail','$phone')";
+        mysqli_query($conn, $insert);
+        header('location:http://193.121.129.31/website/home/home.html');
+        mail($to_email, $subject, $message);
         }
       }
   }

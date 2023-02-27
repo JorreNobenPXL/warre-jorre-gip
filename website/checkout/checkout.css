@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap'); 
+/* font-family: 'Roboto Mono', monospace; */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 10px;
+    background-color: #24252a;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 500;
+    font-size: 15x;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-size: 30px;
+}
+
+p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}
+
+.error-msg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ff0000;
+}
+
+label, input {
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    margin: auto;
+}   
+
+#lname, #fname, #email, #verify_email, #phone {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    width: 80%;
+}
+
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkout, .cancel {
+    display: inline-flex;
+}
+
+.form-btn {
+    padding: 9px 25px;
+    background-color: rgba(0,136,169,1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3 ease 0S;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.form-btn:hover {
+    background-color: rgb(0, 204, 255);
+}
+
+.form-btn-cancel {
+    padding: 9px 27px;
+    background-color: rgb(169, 0, 0);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3 ease 0S;
+    font-weight: bold;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #000000;
+}
+
+.form-btn-cancel:hover {
+    background-color: rgb(255, 0, 0);
+}
+
+.text-login {
+    font-size: 15px;
+}
+
+.text-login a {
+    color: #00aeff;
+    font-size: 15px;
+}

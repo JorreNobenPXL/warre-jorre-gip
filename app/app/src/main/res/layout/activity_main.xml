@@ -94,7 +94,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/others"
         android:layout_above="@+id/socials"
-        android:text="Or sign in with"
+        android:text="Or go to the website!"
         android:textColor="@color/white"
         android:layout_centerHorizontal="true"
         />
@@ -110,7 +110,9 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_margin="20dp"
+            android:id="@+id/googleLogin"
             android:src="@drawable/google"/>
+
     </LinearLayout>
 
 

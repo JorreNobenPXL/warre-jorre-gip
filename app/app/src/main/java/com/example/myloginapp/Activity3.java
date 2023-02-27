@@ -25,6 +25,10 @@ public class Activity3 extends AppCompatActivity {
     EditText email;
     Button confirmsignup;
 
+    boolean EmailValid = false;
+    boolean UsernameValid = false;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,52 +42,25 @@ public class Activity3 extends AppCompatActivity {
         confirmsignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                emailValidator(email);
+                userValidator(usernamesign);
+
                 String name = usernamesign.getText().toString();
                 String password = passwordsign.getText().toString();
                 String confirmPassword = confirmPass.getText().toString();
                 String Email = email.getText().toString();
                 String url = "http://193.121.129.31/GIP-2022/insertData.php";
                 String type = "register";
-                BackgroundWorker backgroundWorker = new BackgroundWorker(Activity3.this);
-                backgroundWorker.execute(url, type, name, password, Email);
-            }
-        });
-    }
-}
 
-    /*EditText email;
-    EditText usernamesign;
-    boolean EmailValid = false;
-    boolean UsernameValid = false;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_3);
-
-        EditText usernamesign = (EditText) findViewById(R.id.usernamesign);
-        EditText passwordsign = (EditText) findViewById(R.id.passwordsign);
-        EditText passwordconf = (EditText) findViewById(R.id.confirmPass);
-        EditText email = (EditText) findViewById(R.id.email);
-
-
-        MaterialButton ConfirmSignUp = (MaterialButton) findViewById(R.id.confirmsignup);
-
-
-        ConfirmSignUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                emailValidator(email);
-                userValidator(usernamesign);
-
-                if (! passwordsign.getText().toString().equals(passwordconf.getText().toString())) {
+                if (! password.equals(confirmPassword)) {
                     Toast.makeText(Activity3.this, "Your Passwords are not the same!", Toast.LENGTH_SHORT).show();
-                }else {
-                    if (passwordsign.getText().toString().equals(passwordconf.getText().toString()) && EmailValid == true && UsernameValid == true) {
-                        Toast.makeText(Activity3.this, "Sign Up Succesfull!", Toast.LENGTH_SHORT).show();
-                        sendToSQL();
+                }else{
+                    if (password.equals(confirmPassword) && EmailValid == true && UsernameValid == true) {
+                        BackgroundWorker backgroundWorker = new BackgroundWorker(Activity3.this);
+                        backgroundWorker.execute(url, type, name, password, Email);
+                        Toast.makeText(Activity3.this, "Succesfully registerd!", Toast.LENGTH_SHORT).show();
                         openMainForLogin();
-                    } else {
+                    }else{
                         if (EmailValid == false) {
                             Toast.makeText(Activity3.this, "Please use a valid Email!", Toast.LENGTH_SHORT).show();
                         } else {
@@ -98,31 +75,27 @@ public class Activity3 extends AppCompatActivity {
     }
 
     public void emailValidator(EditText email) {
-        String emailToText = email.getText().toString();
+    String emailToText = email.getText().toString();
 
-        if (!emailToText.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(emailToText).matches()) {
-            EmailValid = true;
-        } else {
-            EmailValid = false;
-        }
+    if (!emailToText.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(emailToText).matches()) {
+        EmailValid = true;
+    } else {
+        EmailValid = false;
     }
+}
 
     public void userValidator(EditText usernamesign) {
-        String UserToText = usernamesign.getText().toString();
+    String UserToText = usernamesign.getText().toString();
 
-        if (!UserToText.isEmpty()) {
-            UsernameValid = true;
-        } else {
-            UsernameValid = false;
-        }
+    if (!UserToText.isEmpty()) {
+        UsernameValid = true;
+    } else {
+        UsernameValid = false;
     }
-
-    public void sendToSQL() {
-        
-    }
+}
 
     public void openMainForLogin() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
-}*/
+}

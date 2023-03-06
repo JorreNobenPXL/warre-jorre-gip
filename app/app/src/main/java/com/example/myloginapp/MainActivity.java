@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -56,12 +57,22 @@ public class MainActivity extends AppCompatActivity {
                 String Email = "";
                 String url = "http://193.121.129.31/GIP-2022/validateData.php";
                 String type = "login";
-                BackgroundWorker backgroundWorker = new BackgroundWorker(MainActivity.this);
-                backgroundWorker.execute(url, type, name, password, Email);
-                Toast.makeText(MainActivity.this, "Login Succesfull \nWelcome Back " + name, Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getApplicationContext(), Activity2.class);
-                intent.putExtra("message_key", name);
-                startActivity(intent);
+                if (TextUtils.isEmpty(name)) {
+                    Toast.makeText(MainActivity.this, "Please enter username or Email!", Toast.LENGTH_SHORT).show();
+                    usernameLog.setError("Username or Email is required");
+                    usernameLog.requestFocus();
+                } else if (TextUtils.isEmpty(password)) {
+                    Toast.makeText(MainActivity.this, "Please enter your Password!", Toast.LENGTH_SHORT).show();
+                    passwordLog.setError("Password is required");
+                    passwordLog.requestFocus();
+                } else {
+                    BackgroundWorker backgroundWorker = new BackgroundWorker(MainActivity.this);
+                    backgroundWorker.execute(url, type, name, password, Email);
+                    Toast.makeText(MainActivity.this, "Login Succesfull \nWelcome Back " + name, Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getApplicationContext(), Activity2.class);
+                    intent.putExtra("message_key", name);
+                    startActivity(intent);
+                }
             }
         });
 

@@ -77,6 +77,7 @@ public class Activity3 extends AppCompatActivity {
     public void emailValidator(EditText email) {
     String emailToText = email.getText().toString();
 
+
     if (!emailToText.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(emailToText).matches()) {
         EmailValid = true;
     } else {

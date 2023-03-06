@@ -49,6 +49,7 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
             }
             else if(type.equals("login")){
                 post_data = URLEncoder.encode("name", "UTF-8") + "=" + URLEncoder.encode(name, "UTF-8") + "&"
+                        + URLEncoder.encode("email", "UTF-8") + "=" + URLEncoder.encode(Email, "UTF-8")+ "&"
                         + URLEncoder.encode("password", "UTF-8") + "=" + URLEncoder.encode(password, "UTF-8");
             }
 

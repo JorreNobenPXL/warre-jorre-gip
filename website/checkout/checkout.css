@@ -40,24 +40,17 @@ p {
     color: #ff0000;
 }
 
-label, input {
+label, input, select {
     display: flex;
     justify-content: center;
     align-items: center ;
     margin: auto;
 }   
 
-#lname, #fname, #email, #verify_email, #phone {
+#lname, #fname, #email, #verify_email, #event, option {
     background-color: #ffffff;
     border-color: #ffffff;
     width: 80%;
-}
-
-.login {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #ffffff;
 }
 
 .buttons {
@@ -102,11 +95,3 @@ label, input {
     background-color: rgb(255, 0, 0);
 }
 
-.text-login {
-    font-size: 15px;
-}
-
-.text-login a {
-    color: #00aeff;
-    font-size: 15px;
-}

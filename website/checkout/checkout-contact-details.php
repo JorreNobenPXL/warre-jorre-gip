@@ -22,9 +22,9 @@
 
     // qrcode generate
     require "phpqrcode/qrlib.php";
-    $codeContents = $lname . " " . $fname . " " . $event;
+    $codeContents = $fname . " " . $lname . " " . $event;
     $myBarcodeDir = 'generated_barcode/';
-    $fileName = $fname.'.png';
+    $fileName = $fname."_".$event.'.png';
     $pngAbsoluteFilePath = $myBarcodeDir.$fileName;
     QRcode::png($codeContents, $pngAbsoluteFilePath, QR_ECLEVEL_L, 32);
 
@@ -38,7 +38,7 @@
     $message .= "<tr style='background: #eee;'><td><strong>Name:</strong> </td><td>" . $fname . " " . $lname . "</td></tr>";
     $message .= "<tr><td><strong>Email:</strong> </td><td>" . $useremail . "</td></tr>";
     $message .= "<tr><td><strong>Event:</strong> </td><td>" . $event . "</td></tr>";
-    $message .= "<tr><td><strong>QR-Code:</strong> </td><td><img style='width: 300px; height: 300px;' src='http://193.121.129.31/email/$pngAbsoluteFilePath' alt='QR-Code' /></td></tr>";
+    $message .= "<tr><td><strong>QR-Code:</strong> </td><td><img style='width: 300px; height: 300px;' src='http://193.121.129.31/website/checkout/$pngAbsoluteFilePath' alt='QR-Code' /></td></tr>";
     $message .= "</table>";
     $message .= "</body></html>";
     $mailHead = implode("\r\n", [
@@ -54,6 +54,7 @@
       }else{
         $insert = "INSERT INTO checkout(lname, fname, useremail, event) VALUES('$lname', '$fname', '$useremail','$event')";
         mysqli_query($conn, $insert);
+        header('location:http://193.121.129.31/website/home/home.html');
         mail($to, $subject, $message, $mailHead);
         }
       }
@@ -118,7 +119,7 @@
                     </div>
                     <!-- cancel button -->
                     <div class="cancel">
-                    <a class="form-btn-cancel" href="#">Cancel</a>
+                    <a class="form-btn-cancel" href="http://193.121.129.31/website/home/home.html">Cancel</a>
                     </div>
               </div>
             </div>

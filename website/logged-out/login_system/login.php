@@ -21,7 +21,7 @@
 
     if(mysqli_num_rows($result) > 0){
         $_SESSION['useremail'] = $useremail;
-        header('location:http://193.121.129.31/website/home-logged-in.php');
+        header('location:http://193.121.129.31/website/logged-in/home/home-logged-in.php');
     }else{
         $error[] = 'Incorrect email or password!';
     }
@@ -64,11 +64,11 @@
                 <div class="buttons">
                     <!-- submit button -->
                      <div class="submit">
-                    <input type="submit" name="submit" class="form-btn" value="Login in">
+                    <input type="submit" name="submit" class="form-btn" value="Login">
                     </div>
                     <!-- cancel button -->
                     <div class="cancel">
-                    <a class="form-btn-cancel" href="http://193.121.129.31/website/home/home.html">Cancel</a>
+                    <a class="form-btn-cancel" href="http://193.121.129.31/website/logged-out/home/home.html">Cancel</a>
                     </div>
                 </div>
                 <!-- no account register/signup -->

@@ -29,7 +29,7 @@
         }else{
             $insert = "INSERT INTO signup(username, useremail, psw) VALUES('$username', '$useremail','$psw')";
             mysqli_query($conn, $insert);
-            header('location:http://193.121.129.31/website/login_system/login.php');
+            header('location:http://193.121.129.31/website/logged-out/login_system/login.php');
            }
         }
   }
@@ -85,7 +85,7 @@
               </div>
               <!-- cancel button -->
               <div class="cancel">
-                <a class="form-btn-cancel" href="http://193.121.129.31/website/home/home.html">Cancel</a>
+                <a class="form-btn-cancel" href="http://193.121.129.31/website/logged-out/home/home.html">Cancel</a>
               </div>
             </div>
             <div class="login">

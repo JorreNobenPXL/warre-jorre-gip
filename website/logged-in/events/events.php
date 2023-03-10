@@ -1,3 +1,22 @@
+<?php
+
+   $servername = "193.121.129.31";
+   $username = "host";
+   $password = "GIP-2022";
+   $dbname = "gip2023";
+
+   //database connection
+   $conn = mysqli_connect($servername, $username, $password, $dbname);
+  
+  session_start();
+
+    if(!isset($_SESSION['useremail'])){
+    header('location:http://193.121.129.31/webiste/login_system/login.php');
+    }
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,11 +33,12 @@
             <img class="logo" src="images/logo.png" alt="logo">
             <nav>
                 <ul class="nav_links">
-                    <li><a href="http://193.121.129.31/website/home/home.html">Home</a></li>
-                    <li><a href="http://193.121.129.31/website/events/events.html">Events</a></li>
+                    <li><a href="http://193.121.129.31/website/logged-in/account/account.php"><span><?php echo $_SESSION['useremail']; ?></span></a></li>
+                    <li><a href="http://193.121.129.31/website/logged-in/home/home-logged-in.php">Home</a></li>
+                    <li><a href="http://193.121.129.31/website/logged-in/events/events.php">Events</a></li>
                 </ul>
             </nav>
-            <a href="http://193.121.129.31/website/login_system/sign-up.php"><button class="nav_button">Sign Up</button></a>
+            <a href="http://193.121.129.31/website/logged-out/login_system/logout.php"><button class="nav_button">Logout</button></a>
         </header>
     </div>
 

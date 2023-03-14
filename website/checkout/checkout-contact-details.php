@@ -38,7 +38,7 @@
     $message .= "<tr style='background: #eee;'><td><strong>Name:</strong> </td><td>" . $fname . " " . $lname . "</td></tr>";
     $message .= "<tr><td><strong>Email:</strong> </td><td>" . $useremail . "</td></tr>";
     $message .= "<tr><td><strong>Event:</strong> </td><td>" . $event . "</td></tr>";
-    $message .= "<tr><td><strong>QR-Code:</strong> </td><td><img style='width: 300px; height: 300px;' src='http://193.121.129.31/website/logged-out/checkout/$pngAbsoluteFilePath' alt='QR-Code' /></td></tr>";
+    $message .= "<tr><td><strong>QR-Code:</strong> </td><td><img style='width: 300px; height: 300px;' src='http://193.121.129.31/website/checkout/$pngAbsoluteFilePath' alt='QR-Code' /></td></tr>";
     $message .= "</table>";
     $message .= "</body></html>";
     $mailHead = implode("\r\n", [

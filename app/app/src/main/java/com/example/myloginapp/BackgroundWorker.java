@@ -1,10 +1,14 @@
 package com.example.myloginapp;
 
-
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.widget.Toast;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -29,8 +33,8 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
         String login_url = params[0];
         String type = params[1];
         String name = params[2];
-        String password = params[3];
-        String Email = params[4];
+        String username = params[3];
+        String password = params[4];
         try {
 
             URL url = new URL(login_url);
@@ -44,13 +48,13 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
             String post_data = "";
             if(type.equals("register")) {
                 post_data = URLEncoder.encode("name", "UTF-8") + "=" + URLEncoder.encode(name, "UTF-8") + "&"
-                        + URLEncoder.encode("email", "UTF-8") + "=" + URLEncoder.encode(Email, "UTF-8")+ "&"
-                        + URLEncoder.encode("password", "UTF-8") + "=" + URLEncoder.encode(password, "UTF-8");
+                        + URLEncoder.encode("password", "UTF-8") + "=" + URLEncoder.encode(username, "UTF-8")+ "&"
+                        + URLEncoder.encode("email", "UTF-8") + "=" + URLEncoder.encode(password, "UTF-8");
             }
             else if(type.equals("login")){
-                post_data = URLEncoder.encode("name", "UTF-8") + "=" + URLEncoder.encode(name, "UTF-8") + "&"
-                        + URLEncoder.encode("email", "UTF-8") + "=" + URLEncoder.encode(Email, "UTF-8")+ "&"
-                        + URLEncoder.encode("password", "UTF-8") + "=" + URLEncoder.encode(password, "UTF-8");
+                post_data = URLEncoder.encode("name", "UTF-8") + "=" + URLEncoder.encode(username, "UTF-8") + "&"
+                        + URLEncoder.encode("password", "UTF-8") + "=" + URLEncoder.encode(password, "UTF-8") + "&"
+                        + URLEncoder.encode("email", "UTF-8") + "=" + URLEncoder.encode(password, "UTF-8");
             }
 
             bufferedWriter.write(post_data);
@@ -61,12 +65,15 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "iso-8859-1"));
             String result = "";
             String line = "";
+            Log.d("help1", result);
             while ((line = bufferedReader.readLine()) != null) {
                 result += line;
             }
+
             bufferedReader.close();
             inputStream.close();
             httpURLConnection.disconnect();
+            Log.d("help", result);
             return result;
 
         } catch (MalformedURLException e) {
@@ -82,6 +89,7 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
     protected void onPreExecute() {
         alertDialog = new AlertDialog.Builder(context).create();
         alertDialog.setTitle("Login Status");
+
     }
 
     @Override
@@ -89,7 +97,21 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
 
         alertDialog.setMessage(result);
         alertDialog.show();
-        //Toast.makeText(context.getApplicationContext(),result,Toast.LENGTH_LONG).show();
+        Log.d("BackStatus1", "hello");
+        /*boolean Status = false;
+        if (result.equals("Connected Login Succesfull.. Welcome!")) {
+            Status = true;
+            Log.d("BackStatus1", Boolean.toString(Status));
+            Intent intent = new Intent(context.getApplicationContext(), MainActivity.class);
+            intent.putExtra("LogStatus", Status);
+            MainActivity mainActivity = new MainActivity();
+            mainActivity.statusLogValidator(Status);
+        } else if (result.equals("Connected Login not successfull")) {
+            Status = false;
+            Log.d("BackStatus1", "Hello" + Boolean.toString(Status));
+            Intent intent = new Intent(context.getApplicationContext(), MainActivity.class);
+            intent.putExtra("LogStatus", Status);
+        }*/
 
     }
     @Override

@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,14 +15,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONObject;
+
 public class MainActivity extends AppCompatActivity {
 
     // Used to log in / Register
     EditText usernameLog;
     EditText passwordLog;
     EditText email;
+
     Button loginbtn;
     Button signupbtn;
+
 
     // Makes Google Logo A button to Website!
     ImageView googleLoginBtn;
@@ -54,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String name = usernameLog.getText().toString();
                 String password = passwordLog.getText().toString();
-                String Email = "";
+                String Email = usernameLog.getText().toString();
                 String url = "http://193.121.129.31/GIP-2022/validateData.php";
                 String type = "login";
                 if (TextUtils.isEmpty(name)) {
@@ -68,11 +73,10 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     BackgroundWorker backgroundWorker = new BackgroundWorker(MainActivity.this);
                     backgroundWorker.execute(url, type, name, password, Email);
-                    Toast.makeText(MainActivity.this, "Login Succesfull \nWelcome Back " + name, Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getApplicationContext(), Activity2.class);
-                    intent.putExtra("message_key", name);
-                    startActivity(intent);
                 }
+                Intent intent = getIntent();
+                String Status = intent.getStringExtra("StatusLog");
+                Log.d("StatusLog", Status + "Hello");
             }
         });
 
@@ -117,6 +121,19 @@ public class MainActivity extends AppCompatActivity {
                 openActivity3();
             }
         });
+
+    }
+
+    public void statusLogValidator(boolean Status){
+        if (Status = true) {
+            Intent StatusLogin = new Intent(this, Activity2.class);
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            intent.putExtra("Username", String.valueOf(usernameLog));
+            startActivity(intent);
+            startActivity(StatusLogin);
+        } else {
+            Log.d("StatusLogMain", Boolean.toString(Status));
+        }
 
     }
 

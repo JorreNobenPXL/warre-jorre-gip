@@ -10,6 +10,8 @@
   
   session_start();
 
+
+
     if(!isset($_SESSION['useremail'])){
     header('location:http://193.121.129.31/webiste/login_system/login.php');
     }
@@ -25,7 +27,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events</title>
     <link rel="icon" href="images/logo_tab.png">
-    <link rel="stylesheet" href="events.css">
+    <link rel="stylesheet" href="account.css">
 </head> 
 <body>
     <div class="navbar">
@@ -33,13 +35,28 @@
             <img class="logo" src="images/logo.png" alt="logo">
             <nav>
                 <ul class="nav_links">
-                    <li><span><?php echo $_SESSION['useremail']; ?></span></li>
+                    <li><a href="http://193.121.129.31/website/logged-in/account/account.php"><span><?php echo $_SESSION['useremail']; ?></span></a></li>
                     <li><a href="http://193.121.129.31/website/logged-in/home/home-logged-in.php">Home</a></li>
                     <li><a href="http://193.121.129.31/website/logged-in/events/events.php">Events</a></li>
                 </ul>
             </nav>
             <a href="http://193.121.129.31/website/logged-out/login_system/logout.php"><button class="nav_button">Logout</button></a>
         </header>
+    </div>
+
+    <div>
+        <div class="border">
+            <div class="account">
+                <h1>Account</h1>
+                <div class="table">
+                    <table>
+                        <tr><td><strong>Name:</strong> </td><td>" . $fname . " " . $lname . "</td></tr>
+                        <tr><td><strong>Email:</strong> </td><td>" . $useremail . "</td></tr>
+                        <tr><td><strong>Event:</strong> </td><td>" . $event . "</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
 
 

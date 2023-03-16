@@ -98,20 +98,19 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
         alertDialog.setMessage(result);
         alertDialog.show();
         Log.d("BackStatus1", "hello");
-        /*boolean Status = false;
-        if (result.equals("Connected Login Succesfull.. Welcome!")) {
-            Status = true;
-            Log.d("BackStatus1", Boolean.toString(Status));
-            Intent intent = new Intent(context.getApplicationContext(), MainActivity.class);
-            intent.putExtra("LogStatus", Status);
+        Log.d("ResultBackStatus", result);
+        String StatusLog = "false";
+        if (result.equals("Connected Login Successful.. Welcome!")) {
+            StatusLog = "true";
+            Log.d("BackStatusTrue", StatusLog);
             MainActivity mainActivity = new MainActivity();
-            mainActivity.statusLogValidator(Status);
-        } else if (result.equals("Connected Login not successfull")) {
-            Status = false;
-            Log.d("BackStatus1", "Hello" + Boolean.toString(Status));
-            Intent intent = new Intent(context.getApplicationContext(), MainActivity.class);
-            intent.putExtra("LogStatus", Status);
-        }*/
+            mainActivity.statusLogValidator(StatusLog);
+        } else {
+            StatusLog = "false";
+            Log.d("BackStatusFalse", "Hello " + StatusLog);
+            MainActivity mainActivity = new MainActivity();
+            mainActivity.statusLogValidator(StatusLog);
+        }
 
     }
     @Override

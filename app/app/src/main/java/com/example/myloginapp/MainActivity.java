@@ -15,8 +15,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.json.JSONObject;
-
 public class MainActivity extends AppCompatActivity {
 
     // Used to log in / Register
@@ -73,10 +71,9 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     BackgroundWorker backgroundWorker = new BackgroundWorker(MainActivity.this);
                     backgroundWorker.execute(url, type, name, password, Email);
+
+
                 }
-                Intent intent = getIntent();
-                String Status = intent.getStringExtra("StatusLog");
-                Log.d("StatusLog", Status + "Hello");
             }
         });
 
@@ -98,23 +95,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, ForgotPassword.class));
             }
         });
-
-        // Admin and admin
-
-        /*loginbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (username.getText().toString().equals("admin") && password.getText().toString().equals("admin")){
-                    // correct
-                    Toast.makeText(MainActivity.this, "Login Succesfull", Toast.LENGTH_SHORT).show();
-                    openActivity2();
-                }else {
-                    // incorrect
-                    Toast.makeText(MainActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-*/
         signupbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -124,17 +104,25 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void statusLogValidator(boolean Status){
-        if (Status = true) {
-            Intent StatusLogin = new Intent(this, Activity2.class);
-            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-            intent.putExtra("Username", String.valueOf(usernameLog));
-            startActivity(intent);
-            startActivity(StatusLogin);
-        } else {
-            Log.d("StatusLogMain", Boolean.toString(Status));
+    public void statusLogValidator(String StatusLog){
+        if (StatusLog.equals("true")) {
+            Log.d("StatusLogMainTrue", StatusLog);
+            openLoginScreen();
+            /*usernameLog = usernameLog.findViewById(R.id.username);
+            String username = usernameLog.getText().toString();
+            Intent Login = new Intent(getApplicationContext(), Activity2.class);
+            Login.putExtra("Username", username);*/
+        } else if (StatusLog.equals("false")) {
+            Log.d("StatusLogMainFalse", StatusLog);
+            Toast.makeText(getApplicationContext(), "Username or Password incorrect", Toast.LENGTH_SHORT).show();
+
         }
 
+    }
+
+    public void openLoginScreen() {
+        Intent intent = new Intent(this, Activity2.class);
+        startActivity(intent);
     }
 
     /*public void openActivity2(Intent passedMessage) {

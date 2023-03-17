@@ -94,9 +94,17 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
 
     @Override
     protected void onPostExecute(String result) {
-
         alertDialog.setMessage(result);
         alertDialog.show();
+        StatusValidator(result);
+
+    }
+    @Override
+    protected void onProgressUpdate(Void... values) {
+        super.onProgressUpdate(values);
+    }
+
+    public void StatusValidator(String result) {
         Log.d("BackStatus1", "hello");
         Log.d("ResultBackStatus", result);
         String StatusLog = "false";
@@ -113,10 +121,7 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
         }
 
     }
-    @Override
-    protected void onProgressUpdate(Void... values) {
-        super.onProgressUpdate(values);
-    }
+
 }
 
 

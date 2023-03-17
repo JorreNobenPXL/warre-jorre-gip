@@ -3,6 +3,7 @@ package com.example.myloginapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -16,6 +17,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
+    Context context;
+    MainActivity(Context ct) {context = ctx;}
 
     // Used to log in / Register
     EditText usernameLog;
@@ -36,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        context = getApplicationContext();
 
         // Input of Username and Password
         usernameLog = findViewById(R.id.username);
@@ -71,9 +76,8 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     BackgroundWorker backgroundWorker = new BackgroundWorker(MainActivity.this);
                     backgroundWorker.execute(url, type, name, password, Email);
-
-
                 }
+
             }
         });
 
@@ -102,12 +106,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
     }
 
     public void statusLogValidator(String StatusLog){
         if (StatusLog.equals("true")) {
             Log.d("StatusLogMainTrue", StatusLog);
-            openLoginScreen();
             /*usernameLog = usernameLog.findViewById(R.id.username);
             String username = usernameLog.getText().toString();
             Intent Login = new Intent(getApplicationContext(), Activity2.class);
@@ -121,14 +125,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openLoginScreen() {
-        Intent intent = new Intent(this, Activity2.class);
+        Intent intent = new Intent(getApplicationContext(), Activity2.class);
         startActivity(intent);
     }
 
     /*public void openActivity2(Intent passedMessage) {
         Intent intent = new Intent(this, Activity2.class);
         startActivity(intent);
-
     }
 
      */

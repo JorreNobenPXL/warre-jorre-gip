@@ -103,9 +103,11 @@
               <!-- event selecter -->
               <label for="event"><b>Chose Event*</b></label>
               <select id="event" name="event" size="1" required>
-                <option value="Event1">Event1</option>
-                <option value="Event2">Event2</option>
-                <option value="Event3">Event3</option>
+                <option value="Event1">Event 1</option>
+                <option value="Event2">Event 2</option>
+                <option value="Event3">Event 3</option>
+                <option value="Event4">Event 4</option>
+                <option value="Event5">Event 5</option>
               </select>
               <!--checkbox  -->
               <label>

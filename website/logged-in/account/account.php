@@ -44,20 +44,35 @@
         </header>
     </div>
 
-    <div>
-        <div class="border">
-            <div class="account">
-                <h1>Account</h1>
-                <div class="table">
-                    <table>
-                        <tr><td><strong>Name:</strong> </td><td>" . $fname . " " . $lname . "</td></tr>
-                        <tr><td><strong>Email:</strong> </td><td>" . $useremail . "</td></tr>
-                        <tr><td><strong>Event:</strong> </td><td>" . $event . "</td></tr>
-                    </table>
-                </div>
+    <div class="text-account">
+        <h1>Account</h1>
+    </div>
+
+    <div class="settings">
+        <div class="tabel-left">
+            <div class="name">
+                <h2>Naam:</h2>
+            </div>
+            <div class="email">
+                <h2>Email:</h2>
+            </div>
+            <div class="psw">
+                <h2>Wachtwoord:</h2>
+            </div>
+        </div>
+        <div class="tabel-right">
+            <div class="name">
+                <h2>warre gielkens</h2>
+            </div>
+            <div class="email">
+                <h2><?php echo $_SESSION['useremail']; ?></h2>
+            </div>
+            <div class="psw">
+                <h2><?php echo $_SESSION['psw']; ?></h2>
             </div>
         </div>
     </div>
+    
 
 
     

@@ -49,7 +49,7 @@ public class Activity3 extends AppCompatActivity {
                 String password = passwordsign.getText().toString();
                 String confirmPassword = confirmPass.getText().toString();
                 String Email = email.getText().toString();
-                String url = "http://127.0.0.1/GIP2023/insertData.php";
+                String url = "http://193.121.129.31/GIP-2022/insertData.php";
                 String type = "register";
 
                 if (! password.equals(confirmPassword)) {

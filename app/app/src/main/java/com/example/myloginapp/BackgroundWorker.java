@@ -47,8 +47,8 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
 
             String post_data = "";
             if(type.equals("register")) {
-                post_data = URLEncoder.encode("name", "UTF-8") + "=" + URLEncoder.encode(username, "UTF-8") + "&"
-                        + URLEncoder.encode("password", "UTF-8") + "=" + URLEncoder.encode(password, "UTF-8")+ "&"
+                post_data = URLEncoder.encode("name", "UTF-8") + "=" + URLEncoder.encode(name, "UTF-8") + "&"
+                        + URLEncoder.encode("password", "UTF-8") + "=" + URLEncoder.encode(username, "UTF-8")+ "&"
                         + URLEncoder.encode("email", "UTF-8") + "=" + URLEncoder.encode(password, "UTF-8");
             }
             else if(type.equals("login")){

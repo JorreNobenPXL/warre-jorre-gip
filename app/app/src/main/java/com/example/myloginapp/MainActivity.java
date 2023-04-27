@@ -63,8 +63,7 @@ public class MainActivity extends AppCompatActivity {
                 String name = usernameLog.getText().toString();
                 String password = passwordLog.getText().toString();
                 String Email = usernameLog.getText().toString();
-                //String url = "http://193.121.129.31/GIP-2022/validateData.php";
-                String url = "http://127.0.0.1/GIP2023/validateData.php";
+                String url = "http://193.121.129.31/GIP-2022/validateData.php";
                 String type = "login";
                 if (TextUtils.isEmpty(name)) {
                     Toast.makeText(MainActivity.this, "Please enter username or Email!", Toast.LENGTH_SHORT).show();

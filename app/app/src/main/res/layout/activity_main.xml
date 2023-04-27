@@ -94,7 +94,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/others"
         android:layout_above="@+id/socials"
-        android:text="Or go to the website!"
+        android:text="Or go to our website!"
         android:textColor="@color/white"
         android:layout_centerHorizontal="true"
         />

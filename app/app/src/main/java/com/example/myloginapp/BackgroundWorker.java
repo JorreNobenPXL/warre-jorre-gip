@@ -47,8 +47,8 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
 
             String post_data = "";
             if(type.equals("register")) {
-                post_data = URLEncoder.encode("name", "UTF-8") + "=" + URLEncoder.encode(name, "UTF-8") + "&"
-                        + URLEncoder.encode("password", "UTF-8") + "=" + URLEncoder.encode(username, "UTF-8")+ "&"
+                post_data = URLEncoder.encode("name", "UTF-8") + "=" + URLEncoder.encode(username, "UTF-8") + "&"
+                        + URLEncoder.encode("password", "UTF-8") + "=" + URLEncoder.encode(password, "UTF-8")+ "&"
                         + URLEncoder.encode("email", "UTF-8") + "=" + URLEncoder.encode(password, "UTF-8");
             }
             else if(type.equals("login")){
@@ -90,13 +90,25 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
         alertDialog = new AlertDialog.Builder(context).create();
         alertDialog.setTitle("Login Status");
 
+
     }
 
     @Override
     protected void onPostExecute(String result) {
         alertDialog.setMessage(result);
         alertDialog.show();
-        StatusValidator(result);
+        Log.d("BackStatus1", "hello");
+        //Log.d("ResultBackStatus", result);
+        String StatusLog = "false";
+        if (result.equals("Connected Login Successful.. Welcome!")) {
+            StatusLog = "true";
+            Log.d("BackStatusTrue", StatusLog);
+            Intent Login = new Intent(context, Activity2.class);
+            context.startActivity(Login);
+        } else {
+            StatusLog = "false";
+            Log.d("BackStatusFalse", "Hello " + StatusLog);
+        }
 
     }
     @Override
@@ -104,23 +116,10 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
         super.onProgressUpdate(values);
     }
 
-    public void StatusValidator(String result) {
-        Log.d("BackStatus1", "hello");
-        Log.d("ResultBackStatus", result);
-        String StatusLog = "false";
-        if (result.equals("Connected Login Successful.. Welcome!")) {
-            StatusLog = "true";
-            Log.d("BackStatusTrue", StatusLog);
-            MainActivity mainActivity = new MainActivity();
-            mainActivity.statusLogValidator(StatusLog);
-        } else {
-            StatusLog = "false";
-            Log.d("BackStatusFalse", "Hello " + StatusLog);
-            MainActivity mainActivity = new MainActivity();
-            mainActivity.statusLogValidator(StatusLog);
-        }
-
+    public void LoginDialog(Context context) {
+        this.context = context;
     }
+
 
 }
 

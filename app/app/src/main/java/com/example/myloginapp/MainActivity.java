@@ -19,7 +19,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     Context context;
-    MainActivity(Context ct) {context = ctx;}
+
 
     // Used to log in / Register
     EditText usernameLog;
@@ -63,7 +63,8 @@ public class MainActivity extends AppCompatActivity {
                 String name = usernameLog.getText().toString();
                 String password = passwordLog.getText().toString();
                 String Email = usernameLog.getText().toString();
-                String url = "http://193.121.129.31/GIP-2022/validateData.php";
+                //String url = "http://193.121.129.31/GIP-2022/validateData.php";
+                String url = "http://127.0.0.1/GIP2023/validateData.php";
                 String type = "login";
                 if (TextUtils.isEmpty(name)) {
                     Toast.makeText(MainActivity.this, "Please enter username or Email!", Toast.LENGTH_SHORT).show();
@@ -109,20 +110,20 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void statusLogValidator(String StatusLog){
+    /*public void statusLogValidator(String StatusLog){
         if (StatusLog.equals("true")) {
             Log.d("StatusLogMainTrue", StatusLog);
             /*usernameLog = usernameLog.findViewById(R.id.username);
             String username = usernameLog.getText().toString();
             Intent Login = new Intent(getApplicationContext(), Activity2.class);
-            Login.putExtra("Username", username);*/
+            Login.putExtra("Username", username);
         } else if (StatusLog.equals("false")) {
             Log.d("StatusLogMainFalse", StatusLog);
             Toast.makeText(getApplicationContext(), "Username or Password incorrect", Toast.LENGTH_SHORT).show();
 
         }
 
-    }
+    }*/
 
     public void openLoginScreen() {
         Intent intent = new Intent(getApplicationContext(), Activity2.class);

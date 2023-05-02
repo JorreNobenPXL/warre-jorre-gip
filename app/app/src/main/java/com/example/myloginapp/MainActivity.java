@@ -19,7 +19,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     Context context;
-    MainActivity(Context ct) {context = ctx;}
+
 
     // Used to log in / Register
     EditText usernameLog;
@@ -109,20 +109,20 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void statusLogValidator(String StatusLog){
+    /*public void statusLogValidator(String StatusLog){
         if (StatusLog.equals("true")) {
             Log.d("StatusLogMainTrue", StatusLog);
             /*usernameLog = usernameLog.findViewById(R.id.username);
             String username = usernameLog.getText().toString();
             Intent Login = new Intent(getApplicationContext(), Activity2.class);
-            Login.putExtra("Username", username);*/
+            Login.putExtra("Username", username);
         } else if (StatusLog.equals("false")) {
             Log.d("StatusLogMainFalse", StatusLog);
             Toast.makeText(getApplicationContext(), "Username or Password incorrect", Toast.LENGTH_SHORT).show();
 
         }
 
-    }
+    }*/
 
     public void openLoginScreen() {
         Intent intent = new Intent(getApplicationContext(), Activity2.class);

@@ -23,8 +23,8 @@
     // qrcode generate
     require "phpqrcode/qrlib.php";
     $codeContents = $fname . " " . $lname . " " . $event;
-    $myBarcodeDir = 'generated_barcode/';
-    $fileName = $fname."_".$event.'.png';
+    $myBarcodeDir = '../generated_barcode/';
+    $fileName = $useremail."_".$event.'.png';
     $pngAbsoluteFilePath = $myBarcodeDir.$fileName;
     QRcode::png($codeContents, $pngAbsoluteFilePath, QR_ECLEVEL_L, 32);
 
@@ -101,7 +101,7 @@
               <label for="verify_email"><b>Verify Email*</b></label>
               <input type="email" id="verify_email" name="verify_email" required>
               <!-- event selecter -->
-              <label for="event"><b>Chose Event*</b></label>
+              <label for="event"><b>Choose Event*</b></label>
               <select id="event" name="event" size="1" required>
                 <option value="Event1">Event 1</option>
                 <option value="Event2">Event 2</option>
@@ -111,7 +111,7 @@
               </select>
               <!--checkbox  -->
               <label>
-                <input type="checkbox" name="checkbox-tp" id="checkbox-tp" required>I have read and accept the <a href="#" style="color:dodgerblue">Terms & Privacy.</a>
+                <input type="checkbox" name="checkbox-tp" id="checkbox-tp" required><p>  I have read and accept the </p><a href="#" style="color:dodgerblue">Terms & Privacy.</a>
               </label>
               <p>*required</p>
               <div class="buttons">

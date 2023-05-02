@@ -17,15 +17,19 @@
     $psw = md5($_POST['psw']);
     $psw_repeat = md5($_POST['psw_repeat']);
 
+  
+
     $select = " SELECT * FROM signup WHERE username = '$username' && useremail = '$useremail' && psw = '$psw'";
 
     $result = mysqli_query($conn, $select);
 
-      if(mysqli_num_rows($result) > 0){
-        $error[] = 'User already exist!';
-      }else{
-        if($psw != $psw_repeat){
-          $error[] = 'Password not mathched!';
+      if(isset($_POST['admin']) && $_POST['admin'] == 'Yes'){
+        $insert = "INSERT INTO admin(username, useremail, psw) VALUES('$username', '$useremail','$psw')";
+        mysqli_query($conn, $insert);
+        header('location:http://193.121.129.31/website/logged-out/login_system/login.php');
+        }else{
+          if($psw != $psw_repeat){
+            $error[] = 'Password not mathched!';
         }else{
             $insert = "INSERT INTO signup(username, useremail, psw) VALUES('$username', '$useremail','$psw')";
             mysqli_query($conn, $insert);
@@ -78,6 +82,10 @@
             <!-- repeat password -->
             <label for="psw-repeat"><b>Confirm Password</b></label>
             <input type="password" id="psw_repeat" name="psw_repeat" required>
+            <!-- admin -->
+            <label for="admin"><b>Choose Admin Account</b></label>
+            <input type="checkbox" id="admin" name="admin" value="Yes" required>
+            <!-- buttons -->
             <div class="buttons">
               <!-- submit button -->
               <div class="submit">

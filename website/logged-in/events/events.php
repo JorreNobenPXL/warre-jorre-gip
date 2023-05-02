@@ -32,10 +32,10 @@
         <header>
             <img class="logo" src="images/logo.png" alt="logo">
             <nav>
-                <ul class="nav_links">
-                    <li><a href="http://193.121.129.31/website/logged-in/account/account.php"><span><?php echo $_SESSION['useremail']; ?></span></a></li>
-                    <li><a href="http://193.121.129.31/website/logged-in/home/home-logged-in.php">Home</a></li>
+            <ul class="nav_links">
+                    <li><a href="http://193.121.129.31/website/logged-in/home/home-logged-in.php">Home</a></li
                     <li><a href="http://193.121.129.31/website/logged-in/events/events.php">Events</a></li>
+                    <li><a href="http://193.121.129.31/website/logged-in/account/account.php"><span>My Account</span></a></li>
                 </ul>
             </nav>
             <a href="http://193.121.129.31/website/logged-out/login_system/logout.php"><button class="nav_button">Logout</button></a>

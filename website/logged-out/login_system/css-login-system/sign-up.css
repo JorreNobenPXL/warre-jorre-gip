@@ -47,7 +47,7 @@ label, input {
     margin: auto;
 }   
 
-#username, #email, #psw, #psw_repeat {
+#username, #email, #psw, #psw_repeat, #account {
     background-color: #ffffff;
     border-color: #ffffff;
     width: 80%;

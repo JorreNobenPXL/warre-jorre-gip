@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.Random;
+
 public class ForgotPassword extends AppCompatActivity {
 
     private Button PassResetBtn;
@@ -22,7 +24,7 @@ public class ForgotPassword extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.forgot_password);
 
-        getSupportActionBar().setTitle("Forgot Password");
+        //getSupportActionBar().setTitle("Forgot Password");
 
         PassResetEmail = findViewById(R.id.forgotPassEmail);
         PassResetBtn = findViewById(R.id.forgotPassBtn);
@@ -47,9 +49,16 @@ public class ForgotPassword extends AppCompatActivity {
         });
     }
     private void resetPassword(EditText PassResetEmail) {
-        String to = PassResetEmail.getText().toString();
-        String Subject = "Reset Code";
-        String message = "Your Password Reset Code is\n code: " + Math.random();
+        Random random = new Random();
+        String email = PassResetEmail.getText().toString();
+        String id = String.format("%04d", random.nextInt(10000));
+        String password = "";
+
+        String type = "ForgotPass";
+        String url = "http://193.121.129.31/GIP-2022/forgotPassword.php";
+
+        BackgroundWorker backgroundWorker = new BackgroundWorker(ForgotPassword.this);
+        backgroundWorker.execute(url, type, email, id, password);
 
 
 

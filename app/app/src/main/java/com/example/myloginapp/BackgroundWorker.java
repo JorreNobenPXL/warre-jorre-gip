@@ -56,6 +56,10 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
                         + URLEncoder.encode("password", "UTF-8") + "=" + URLEncoder.encode(password, "UTF-8") + "&"
                         + URLEncoder.encode("email", "UTF-8") + "=" + URLEncoder.encode(password, "UTF-8");
             }
+            else if(type.equals("ForgotPass")){
+                post_data = URLEncoder.encode("email", "UTF-8") + "=" + URLEncoder.encode(name, "UTF-8") + "&"
+                        + URLEncoder.encode("id", "UTF-8") + "=" + URLEncoder.encode(username, "UTF-8") + "&";
+            }
 
             bufferedWriter.write(post_data);
             bufferedWriter.flush();
@@ -95,8 +99,6 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
 
     @Override
     protected void onPostExecute(String result) {
-        alertDialog.setMessage(result);
-        alertDialog.show();
         Log.d("BackStatus1", "hello");
         //Log.d("ResultBackStatus", result);
         String StatusLog = "false";
@@ -108,6 +110,8 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
         } else {
             StatusLog = "false";
             Log.d("BackStatusFalse", "Hello " + StatusLog);
+            alertDialog.setMessage(result);
+            alertDialog.show();
         }
 
     }

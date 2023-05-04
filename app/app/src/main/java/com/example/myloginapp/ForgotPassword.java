@@ -2,6 +2,7 @@ package com.example.myloginapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -59,6 +60,12 @@ public class ForgotPassword extends AppCompatActivity {
 
         BackgroundWorker backgroundWorker = new BackgroundWorker(ForgotPassword.this);
         backgroundWorker.execute(url, type, email, id, password);
+        Toast.makeText(ForgotPassword.this, "Your Reset Code Has Been Sent Via Email", Toast.LENGTH_SHORT).show();
+
+        Intent i = new Intent(this, VerifyCodeInput.class);
+        i.putExtra("ID", id);
+        i.putExtra("EMAIL", email);
+        startActivity(i);
 
 
 

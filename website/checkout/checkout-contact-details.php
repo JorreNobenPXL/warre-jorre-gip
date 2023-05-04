@@ -14,7 +14,8 @@
 
     // database values
     $lname = mysqli_real_escape_string($conn, $_POST['lname']);
-    $fname = mysqli_real_escape_string($conn, $_POST['fname']);  
+    $fname = mysqli_real_escape_string($conn, $_POST['fname']); 
+    $username = mysqli_real_escape_string($conn, $_POST['username']);   
     $useremail = mysqli_real_escape_string($conn, $_POST['useremail']);
     $verify_email = mysqli_real_escape_string($conn, $_POST['verify_email']);
     $event = $_POST['event'];
@@ -36,6 +37,7 @@
     $message .= "<tr><td><strong style='font-size: 175%;'>This mail is sent because you ordered a ticket.</strong></td></tr>";
     $message .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
     $message .= "<tr style='background: #eee;'><td><strong>Name:</strong> </td><td>" . $fname . " " . $lname . "</td></tr>";
+    $message .= "<tr><td><strong>Username:</strong> </td><td>" . $username . "</td></tr>";
     $message .= "<tr><td><strong>Email:</strong> </td><td>" . $useremail . "</td></tr>";
     $message .= "<tr><td><strong>Event:</strong> </td><td>" . $event . "</td></tr>";
     $message .= "<tr><td><strong>QR-Code:</strong> </td><td><img style='width: 300px; height: 300px;' src='http://193.121.129.31/website/checkout/$pngAbsoluteFilePath' alt='QR-Code' /></td></tr>";
@@ -52,7 +54,7 @@
       if($useremail != $verify_email){
         $error[] = 'Email not mathched!';
       }else{// als logged in ga terug naar home logged in
-        $insert = "INSERT INTO checkout(lname, fname, useremail, event) VALUES('$lname', '$fname', '$useremail','$event')";
+        $insert = "INSERT INTO checkout(lname, fname, username, useremail, event) VALUES('$lname', '$fname', '$username', '$useremail','$event')";
         mysqli_query($conn, $insert);
         header('location:http://193.121.129.31/website/logged-out/home/home.html');
         mail($to, $subject, $message, $mailHead);
@@ -94,6 +96,9 @@
               <!-- front name -->
               <label for="fname"><b>Firstname*</b></label>
               <input type="text" id="fname" name="fname" required>
+              <!-- username -->
+              <label for="username"><b>Username*</b></label>
+              <input type="text" id="username" name="username" required>
               <!-- email -->
               <label for="email"><b>Email*</b></label>
               <input type="email" id="email" name="useremail" required>

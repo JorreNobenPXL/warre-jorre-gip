@@ -12,18 +12,22 @@
 
     if(isset($_POST['submit'])){
         
+    $username = mysqli_real_escape_string($conn, $_POST['username']);
     $useremail = mysqli_real_escape_string($conn, $_POST['useremail']);
     $psw = md5($_POST['psw']);
 
-    $select = "SELECT * FROM signup WHERE useremail = '$useremail' && psw = '$psw'";
+    $selectsignup = "SELECT * FROM signup WHERE username = '$username' && useremail = '$useremail' && psw = '$psw'";
+    $selectadmin = "SELECT * FROM admin WHERE username = '$username' && useremail = '$useremail' && psw = '$psw'";
 
-    $result = mysqli_query($conn, $select);
+    $resultsignup = mysqli_query($conn, $selectsignup);
+    $resultadmin = mysqli_query($conn, $selectadmin);
 
-    if(mysqli_num_rows($result) > 0){
-        $_SESSION['useremail'] = $useremail;
+
+    if((mysqli_num_rows($resultsignup) > 0) || (mysqli_num_rows($resultadmin) > 0)){
+        $_SESSION['username'] = $username;
         header('location:http://193.121.129.31/website/logged-in/home/home-logged-in.php');
     }else{
-        $error[] = 'Incorrect email or password!';
+        $error[] = 'Incorrect username, email or password!';
     }
 
     }
@@ -55,6 +59,9 @@
                         }
                     }
                 ?>
+                <!-- username -->
+                <label for="username"><b>Username</b></label>
+                <input type="text" id="username" name="username" required>
                 <!-- email -->
                 <label class="label_email" for="email"><b>Email</b></label>
                 <input type="email" id="email" name="useremail" required>

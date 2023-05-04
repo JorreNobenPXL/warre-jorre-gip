@@ -84,7 +84,7 @@
             <input type="password" id="psw_repeat" name="psw_repeat" required>
             <!-- admin -->
             <label for="admin"><b>Choose Admin Account</b></label>
-            <input type="checkbox" id="admin" name="admin" value="Yes" required>
+            <input type="checkbox" id="admin" name="admin" value="Yes">
             <!-- buttons -->
             <div class="buttons">
               <!-- submit button -->

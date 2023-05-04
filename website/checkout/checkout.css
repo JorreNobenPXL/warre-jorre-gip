@@ -47,7 +47,7 @@ label, input, select {
     margin: auto;
 }   
 
-#lname, #fname, #email, #verify_email, #event, option {
+#lname, #fname, #username, #email, #verify_email, #event, option {
     background-color: #ffffff;
     border-color: #ffffff;
     width: 80%;

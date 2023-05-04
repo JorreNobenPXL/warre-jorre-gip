@@ -10,25 +10,47 @@
   
   session_start();
 
-    // $event = $_SESSION['event'];
-    $useremail = $_SESSION['useremail'];
-    // $myBarcodeDir = '../../generated_barcode/';
-    // $fileName = $useremail."_".$event.'.png';
-    // $pngAbsoluteFilePath = $myBarcodeDir.$fileName;
-    // $qrcode = "<img style='width=20px' src='localhost/data/$pngAbsoluteFilePath'>"; //path aanpassen
-    
-    //$query = "SELECT * FROM checkout WHERE useremail LIKE $useremail";
-    $query = "SELECT * FROM checkout WHERE id LIKE 2";
-    $query2 = "SELECT * FROM signup WHERE id LIKE 2";
-    $query_run = mysqli_query($conn, $query);
-    $query_run2 = mysqli_query($conn, $query2);
+  
+   $username = $_SESSION['username'];
+   $sql= "SELECT * FROM checkout WHERE username='".$username."'";
+   $res = mysqli_query($conn, $sql);
 
-    if(!isset($_SESSION['useremail'])){
-    header('location:http://193.121.129.31/webiste/login_system/login.php');
-    }
+   if(mysqli_num_rows($res) > 0)
+        {
+            foreach($res as $row)
+            {
+                ?>
+                <tr>
+                    <td><?= $row['id']; ?></td>
+                    <td><?= $row['stud_name']; ?></td>
+                    <td><?= $row['stud_class']; ?></td>
+                    <td><?= $row['stud_phone']; ?></td>
+                </tr>
+                <?php
+            }
+        }
+        else
+        {
+            ?>
+                <tr>
+                    <td colspan="4">No Record Found</td>
+                </tr>
+            <?php
+        }
+                                
+
+//  while ($row = mysql_fetch_assoc($res)){
+//      $username = $row['username'];
+//      $firstname = $row['first_name'];
+//      $lastname = $row['last_name'];
+//      $email = $row['email'];
+//      $school = $row['school'];
+//      $topics .= "<tr><td>username:".$username." </td><td>First name:".$firstname."</td><td>Last name:".$lastname."</td><td>email: ".$email."</td><td>school: ".$school."</td></tr>";
+//  echo $topics;
+//  } 
 
 ?>
-
+<!-- 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -55,78 +77,6 @@
         </header>
     </div>
 
-    <div class="text-account">
-        <h1>Account</h1>
-    </div>
-
-    <div class="settings">
-        <div class="tabel-left">
-            <div class="name">
-                <h2>Naam:</h2>
-            </div>
-            <div class="email">
-                <h2>Email:</h2>
-            </div>
-            <div class="psw">
-                <h2>Wachtwoord:</h2>
-            </div>
-        </div>
-        <div class="tabel-right">
-            <div class="name">
-                <h2>warre gielkens</h2>
-            </div>
-            <div class="email">
-                <h2><?php echo $_SESSION['useremail']; ?></h2>
-            </div>
-            <div class="psw">
-                <h2><?php echo $_SESSION['psw']; ?></h2>
-            </div>
-        </div>
-    </div>
-    <?php        
-        if(mysqli_num_rows($query_run) > 0)
-        {
-            foreach($query_run as $row)
-            {
-                ?>
-                <tr>
-                    <th>ID</th>
-                    <td><?= $row['id']; ?></td>
-                </tr>
-                <tr>
-                    <th>Name</th>
-                    <td><?= $row['lname']; ?></td>
-                    <td><?= $row['fname']; ?></td>
-                </tr>
-                <tr>
-                    <th>Email</th>
-                    <td><?= $row['useremail']; ?></td>
-                </tr>
-                <tr>
-                    <th>Password</th>
-                    <td><?= $psw2['psw']; ?></td>
-                </tr>
-                <tr>
-                    <th>Event</th>
-                    <td><?= $row['event']; ?></td>
-                </tr>
-                <tr>
-                    <th>QR-Code</th>
-                    <td><?= $qrcode ?></td>
-                </tr>
-                
-                <?php
-            }
-        }
-        else
-        {
-            ?>
-                <tr>
-                    <td colspan="4">No Record Found</td>
-                </tr>
-            <?php
-        }
-    ?>
 
 
     
@@ -142,4 +92,4 @@
 
     <script src="main.js"></script>
 </body>
-</html>
+</html> -->

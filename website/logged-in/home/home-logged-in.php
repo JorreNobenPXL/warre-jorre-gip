@@ -32,9 +32,9 @@
             <img class="logo" src="images/logo.png" alt="logo">
             <nav>
                 <ul class="nav_links">
-                    <li><a href="http://193.121.129.31/website/logged-in/account/account.php"><span><?php echo $_SESSION['useremail']; ?></span></a></li>
-                    <li><a href="http://193.121.129.31/website/logged-in/home/home-logged-in.php">Home</a></li>
+                    <li><a href="http://193.121.129.31/website/logged-in/home/home-logged-in.php">Home</a></li
                     <li><a href="http://193.121.129.31/website/logged-in/events/events.php">Events</a></li>
+                    <li><a href="http://193.121.129.31/website/logged-in/account/account.php"><span>My Account</span></a></li>
                 </ul>
             </nav>
             <a href="http://193.121.129.31/website/logged-out/login_system/logout.php"><button class="nav_button">Logout</button></a>
@@ -57,21 +57,21 @@
 
             <div class="events">
                 <div class="event-img">
-                    <a href="http://193.121.129.31/website/events/events.html"><img src="images/events_img.png" alt=""></a>
+                    <a href="http://193.121.129.31/website/logged-in/events/events.php"><img src="images/events_img.png" alt=""></a>
                     <h2 class="event-name">Event name 1</h2>
                 </div>
                 <div class="event-img">
-                    <a href="http://193.121.129.31/website/events/events.html"><img src="images/events_img.png" alt=""></a>
+                    <a href="http://193.121.129.31/website/logged-in/events/events.php"><img src="images/events_img.png" alt=""></a>
                     <h2 class="event-name">Event name 2</h2>
                 </div>
                 <div class="event-img">
-                    <a href="http://193.121.129.31/website/events/events.html"><img src="images/events_img.png" alt=""></a>
+                    <a href="http://193.121.129.31/website/logged-in/events/events.php"><img src="images/events_img.png" alt=""></a>
                     <h2 class="event-name">Event name 3</h2>
                 </div>
             </div>
 
             <div class="btn-more-events">
-                <a href="http://193.121.129.31/website/events/events.html">See more events</a>
+                <a href="http://193.121.129.31/website/logged-in/events/events.php">See more events</a>
             </div>
 
             <div class="text-sponser">

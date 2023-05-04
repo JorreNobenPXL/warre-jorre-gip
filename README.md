@@ -1,7 +1,7 @@
 # warre-jorre-gip
 Warre Jorre GIP
 
-This Repository is made for an end project of the two people stated above:
+This Repository is made for an end project of the two people stated below:
   - Jorre Noben
   - Warre Gielkens
 

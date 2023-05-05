@@ -40,7 +40,13 @@ public class VerifyCodeInput extends AppCompatActivity {
                 }else{
                     if (Verifycode.equals(GenCode)) {
                         Toast.makeText(VerifyCodeInput.this, "Code is correct, please wait", Toast.LENGTH_SHORT).show();
-
+                    }else{
+                        Toast.makeText(VerifyCodeInput.this, "Code is incorrect please try again", Toast.LENGTH_SHORT).show();
+                        VerificationCode.setError("Verification Code is Incorrect");
+                        VerificationCode.requestFocus();
+                        Intent i = new Intent(getApplicationContext(), ResetPasswordInput.class);
+                        i.putExtra("EMAIL", Email);
+                        startActivity(i);
                     }
                 }
             }

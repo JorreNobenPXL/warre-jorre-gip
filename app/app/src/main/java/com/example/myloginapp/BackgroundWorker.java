@@ -60,6 +60,10 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
                 post_data = URLEncoder.encode("email", "UTF-8") + "=" + URLEncoder.encode(name, "UTF-8") + "&"
                         + URLEncoder.encode("id", "UTF-8") + "=" + URLEncoder.encode(username, "UTF-8") + "&";
             }
+            else if(type.equals("ChangePassword")){
+                post_data = URLEncoder.encode("password", "UTF-8") + "=" + URLEncoder.encode(name, "UTF-8") + "&"
+                        + URLEncoder.encode("email", "UTF-8") + "=" + URLEncoder.encode(username, "UTF-8") + "&";
+            }
 
             bufferedWriter.write(post_data);
             bufferedWriter.flush();

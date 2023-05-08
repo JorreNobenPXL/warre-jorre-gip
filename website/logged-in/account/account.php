@@ -12,7 +12,7 @@
 
   
    $username = $_SESSION['username'];
-   $sql= "SELECT * FROM checkout WHERE username='".$username."'";
+   $sql= "SELECT * FROM checkout WHERE username = '$username'";
    $res = mysqli_query($conn, $sql);
 
    if(mysqli_num_rows($res) > 0)
@@ -21,10 +21,11 @@
             {
                 ?>
                 <tr>
-                    <td><?= $row['id']; ?></td>
-                    <td><?= $row['stud_name']; ?></td>
-                    <td><?= $row['stud_class']; ?></td>
-                    <td><?= $row['stud_phone']; ?></td>
+                    <td><?= $row['fname']; ?></td>
+                    <td><?= $row['lname']; ?></td>
+                    <td><?= $row['username']; ?></td>
+                    <td><?= $row['useremail']; ?></td>
+                    <td><?= $row['event']; ?></td>
                 </tr>
                 <?php
             }
@@ -33,21 +34,10 @@
         {
             ?>
                 <tr>
-                    <td colspan="4">No Record Found</td>
+                    <td>No Record Found</td>
                 </tr>
             <?php
         }
-                                
-
-//  while ($row = mysql_fetch_assoc($res)){
-//      $username = $row['username'];
-//      $firstname = $row['first_name'];
-//      $lastname = $row['last_name'];
-//      $email = $row['email'];
-//      $school = $row['school'];
-//      $topics .= "<tr><td>username:".$username." </td><td>First name:".$firstname."</td><td>Last name:".$lastname."</td><td>email: ".$email."</td><td>school: ".$school."</td></tr>";
-//  echo $topics;
-//  } 
 
 ?>
 <!-- 
@@ -68,7 +58,7 @@
             <img class="logo" src="images/logo.png" alt="logo">
             <nav>
                 <ul class="nav_links">
-                    <li><a href="http://193.121.129.31/website/logged-in/home/home-logged-in.php">Home</a></li
+                    <li><a href="http://193.121.129.31/website/logged-in/home/home-logged-in.php">Home</a></li>
                     <li><a href="http://193.121.129.31/website/logged-in/events/events.php">Events</a></li>
                     <li><a href="http://193.121.129.31/website/logged-in/account/account.php"><span>My Account</span></a></li>
                 </ul>

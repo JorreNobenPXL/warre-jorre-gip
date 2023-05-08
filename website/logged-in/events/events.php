@@ -10,8 +10,8 @@
   
   session_start();
 
-    if(!isset($_SESSION['useremail'])){
-    header('location:http://193.121.129.31/webiste/login_system/login.php');
+    if(!isset($_SESSION['username'])){
+        header('location:http://193.121.129.31/webiste/logged-out/login_system/login.php');
     }
 
 ?>
@@ -33,7 +33,7 @@
             <img class="logo" src="images/logo.png" alt="logo">
             <nav>
             <ul class="nav_links">
-                    <li><a href="http://193.121.129.31/website/logged-in/home/home-logged-in.php">Home</a></li
+                    <li><a href="http://193.121.129.31/website/logged-in/home/home-logged-in.php">Home</a></li>
                     <li><a href="http://193.121.129.31/website/logged-in/events/events.php">Events</a></li>
                     <li><a href="http://193.121.129.31/website/logged-in/account/account.php"><span>My Account</span></a></li>
                 </ul>

@@ -16,26 +16,33 @@
     $useremail = mysqli_real_escape_string($conn, $_POST['useremail']);
     $psw = md5($_POST['psw']);
     $psw_repeat = md5($_POST['psw_repeat']);
+    $admin = mysqli_real_escape_string($conn, $_POST['admin']);
 
   
 
-    $select = " SELECT * FROM signup WHERE username = '$username' && useremail = '$useremail' && psw = '$psw'";
+    $checkUseremailAdmin = "SELECT * FROM admin WHERE useremail = '$useremail'";
+    $checkUseremailSignup = "SELECT * FROM signup WHERE useremail = '$useremail'";
 
-    $result = mysqli_query($conn, $select);
+    $resultUseremailSignup = mysqli_query($conn, $checkUseremailSignup);
+    $resultUseremailAdmin = mysqli_query($conn, $checkUseremailAdmin);
 
-      if(isset($_POST['admin']) && $_POST['admin'] == 'Yes'){
-        $insert = "INSERT INTO admin(username, useremail, psw) VALUES('$username', '$useremail','$psw')";
-        mysqli_query($conn, $insert);
-        header('location:http://193.121.129.31/website/logged-out/login_system/login.php');
+    if((mysqli_num_rows($resultUseremailSignup)>0) || (mysqli_num_rows($resultUseremailAdmin)>0)){
+      $error[] = 'Email already used!';
+    }else{
+      if($psw != $psw_repeat){
+        $error[] = 'Password not mathched!';
         }else{
-          if($psw != $psw_repeat){
-            $error[] = 'Password not mathched!';
-        }else{
-            $insert = "INSERT INTO signup(username, useremail, psw) VALUES('$username', '$useremail','$psw')";
+          if(isset($admin) && $admin == 'Yes'){
+            $insert = "INSERT INTO admin(username, useremail, psw, admin) VALUES('$username', '$useremail', '$psw', '$admin')";
+            mysqli_query($conn, $insert);
+            header('location:http://193.121.129.31/website/logged-out/login_system/login.php');
+          }else{
+            $insert = "INSERT INTO signup(username, useremail, psw, admin) VALUES('$username', '$useremail','$psw', '$admin')";
             mysqli_query($conn, $insert);
             header('location:http://193.121.129.31/website/logged-out/login_system/login.php');
            }
         }
+    }
   }
 
   
@@ -84,7 +91,10 @@
             <input type="password" id="psw_repeat" name="psw_repeat" required>
             <!-- admin -->
             <label for="admin"><b>Choose Admin Account</b></label>
-            <input type="checkbox" id="admin" name="admin" value="Yes">
+              <select id="admin" name="admin" size="1" required>
+                <option value="No">No</option>
+                <option value="Yes">Yes</option>
+              </select>
             <!-- buttons -->
             <div class="buttons">
               <!-- submit button -->

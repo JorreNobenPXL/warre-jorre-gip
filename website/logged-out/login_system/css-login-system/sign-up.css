@@ -40,14 +40,14 @@ p {
     color: #ff0000;
 }
 
-label, input {
+label, input, select {
     display: flex;
     justify-content: center;
     align-items: center ;
     margin: auto;
 }   
 
-#username, #email, #psw, #psw_repeat {
+#username, #email, #psw, #psw_repeat, #admin, option {
     background-color: #ffffff;
     border-color: #ffffff;
     width: 80%;

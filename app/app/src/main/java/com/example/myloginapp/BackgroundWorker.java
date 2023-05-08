@@ -96,7 +96,7 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
     @Override
     protected void onPreExecute() {
         alertDialog = new AlertDialog.Builder(context).create();
-        alertDialog.setTitle("Login Status");
+        alertDialog.setTitle("Status");
 
 
     }
@@ -111,9 +111,23 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
             Log.d("BackStatusTrue", StatusLog);
             Intent Login = new Intent(context, Activity2.class);
             context.startActivity(Login);
-        } else {
+        } else if (result.equals("Connected Login not successfull")){
             StatusLog = "false";
             Log.d("BackStatusFalse", "Hello " + StatusLog);
+            alertDialog.setMessage(result);
+            alertDialog.show();
+        }
+        if (result.equals(" Username is allready in use! You have registered!")) {
+            Intent Main = new Intent(context, MainActivity.class);
+            context.startActivity(Main);
+        }
+        else if (result.equals(" Username is allready in use! User allready used")) {
+            result = "Username is already in use!";
+            alertDialog.setMessage(result);
+            alertDialog.show();
+        }
+        else if (result.equals(" Username is allready in use! Email allready used!")){
+            result = "Email is already in use!";
             alertDialog.setMessage(result);
             alertDialog.show();
         }

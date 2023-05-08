@@ -58,8 +58,8 @@ public class Activity3 extends AppCompatActivity {
                     if (password.equals(confirmPassword) && EmailValid == true && UsernameValid == true) {
                         BackgroundWorker backgroundWorker = new BackgroundWorker(Activity3.this);
                         backgroundWorker.execute(url, type, name, password, Email);
-                        Toast.makeText(Activity3.this, "Succesfully registerd!", Toast.LENGTH_SHORT).show();
-                        openMainForLogin();
+                        //Toast.makeText(Activity3.this, "Succesfully registerd!", Toast.LENGTH_SHORT).show();
+                        //openMainForLogin();
                     }else{
                         if (EmailValid == false) {
                             Toast.makeText(Activity3.this, "Please use a valid Email!", Toast.LENGTH_SHORT).show();

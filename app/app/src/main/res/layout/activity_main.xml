@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/signin"
         android:text="Sign In"
-        android:textColor="@color/white"
+        android:textColor="#00FFFF"
         android:textSize="35dp"
         android:textStyle="bold"
         android:layout_margin="50dp"

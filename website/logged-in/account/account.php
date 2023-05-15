@@ -12,20 +12,22 @@
 
   
    $username = $_SESSION['username'];
-   $sql= "SELECT * FROM checkout WHERE username = '$username'";
-   $res = mysqli_query($conn, $sql);
 
-   if(mysqli_num_rows($res) > 0)
+   $getdataSignup = "SELECT * FROM signup WHERE username = '$username'";
+
+
+   $resSignup = mysqli_query($conn, $getdataSignup);
+
+   if(mysqli_num_rows($resSignup) > 0)
         {
-            foreach($res as $row)
+            foreach($resSignup as $row)
             {
                 ?>
                 <tr>
-                    <td><?= $row['fname']; ?></td>
-                    <td><?= $row['lname']; ?></td>
                     <td><?= $row['username']; ?></td>
                     <td><?= $row['useremail']; ?></td>
-                    <td><?= $row['event']; ?></td>
+                    <td><?= $row['psw']; ?></td>
+                    <td><?= $row['admin']; ?></td>
                 </tr>
                 <?php
             }
@@ -34,7 +36,7 @@
         {
             ?>
                 <tr>
-                    <td>No Record Found</td>
+                    <td>You don't have this.</td>
                 </tr>
             <?php
         }
@@ -55,7 +57,7 @@
 <body>
     <div class="navbar">
         <header>
-            <img class="logo" src="images/logo.png" alt="logo">
+        <a class="logo" href="http://193.121.129.31/website/logged-in/home/home-logged-in.php"><img src="images/logo.png" alt="logo"></a>
             <nav>
                 <ul class="nav_links">
                     <li><a href="http://193.121.129.31/website/logged-in/home/home-logged-in.php">Home</a></li>

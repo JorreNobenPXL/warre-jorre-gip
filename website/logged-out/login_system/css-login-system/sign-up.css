@@ -47,10 +47,30 @@ label, input, select {
     margin: auto;
 }   
 
-#username, #email, #psw, #psw_repeat, #admin, option {
+#username, #email, #admin, option {
     background-color: #ffffff;
     border-color: #ffffff;
     width: 80%;
+}
+
+.seepassword {
+    position: relative;
+    background: none;
+}
+
+.seepassword input {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    width: 85%;
+}
+
+.fa-eye {
+    position: absolute;
+    background-color: #ffffff;
+    top: 24%;
+    right: 12%;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
 }
 
 .login {

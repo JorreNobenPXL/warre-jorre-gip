@@ -18,7 +18,13 @@
     $psw_repeat = md5($_POST['psw_repeat']);
     $admin = mysqli_real_escape_string($conn, $_POST['admin']);
 
-  
+
+    $checkUsernameAdmin = "SELECT * FROM admin WHERE username = '$username'";
+    $checkUsernameSignup = "SELECT * FROM signup WHERE username = '$username'";
+
+    $resultUsernameSignup = mysqli_query($conn, $checkUsernameSignup);
+    $resultUsernameAdmin = mysqli_query($conn, $checkUsernameAdmin);
+
 
     $checkUseremailAdmin = "SELECT * FROM admin WHERE useremail = '$useremail'";
     $checkUseremailSignup = "SELECT * FROM signup WHERE useremail = '$useremail'";
@@ -26,22 +32,28 @@
     $resultUseremailSignup = mysqli_query($conn, $checkUseremailSignup);
     $resultUseremailAdmin = mysqli_query($conn, $checkUseremailAdmin);
 
-    if((mysqli_num_rows($resultUseremailSignup)>0) || (mysqli_num_rows($resultUseremailAdmin)>0)){
-      $error[] = 'Email already used!';
+
+
+    if((mysqli_num_rows($resultUsernameSignup)>0) || (mysqli_num_rows($resultUsernameAdmin)>0)){
+      $error[] = 'User already used!';
     }else{
-      if($psw != $psw_repeat){
-        $error[] = 'Password not mathched!';
-        }else{
-          if(isset($admin) && $admin == 'Yes'){
-            $insert = "INSERT INTO admin(username, useremail, psw, admin) VALUES('$username', '$useremail', '$psw', '$admin')";
-            mysqli_query($conn, $insert);
-            header('location:http://193.121.129.31/website/logged-out/login_system/login.php');
+      if((mysqli_num_rows($resultUseremailSignup)>0) || (mysqli_num_rows($resultUseremailAdmin)>0)){
+        $error[] = 'Email already used!';
+      }else{
+        if($psw != $psw_repeat){
+          $error[] = 'Password not mathched!';
           }else{
-            $insert = "INSERT INTO signup(username, useremail, psw, admin) VALUES('$username', '$useremail','$psw', '$admin')";
-            mysqli_query($conn, $insert);
-            header('location:http://193.121.129.31/website/logged-out/login_system/login.php');
-           }
-        }
+            if(isset($admin) && $admin == 'Yes'){
+              $insert = "INSERT INTO admin(username, useremail, psw, admin) VALUES('$username', '$useremail', '$psw', '$admin')";
+              mysqli_query($conn, $insert);
+              header('location:http://193.121.129.31/website/logged-out/login_system/login.php');
+            }else{
+              $insert = "INSERT INTO signup(username, useremail, psw, admin) VALUES('$username', '$useremail','$psw', '$admin')";
+              mysqli_query($conn, $insert);
+              header('location:http://193.121.129.31/website/logged-out/login_system/login.php');
+            }
+          }
+      }
     }
   }
 
@@ -60,7 +72,7 @@
       <title>Sign Up</title>
       <link rel="icon" href="images/logo_tab.png">
       <link rel="stylesheet" href="css-login-system/sign-up.css">
-      
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
   </head>
   <body>
       
@@ -85,10 +97,16 @@
             <input type="email" id="email" name="useremail" required>
             <!-- password -->
             <label for="psw"><b>Password</b></label>
-            <input type="password" id="psw" name="psw" required>
+            <div class="seepassword">
+                <input type="password" id="psw" name="psw" required>
+                <i class="far fa-eye" id="togglePassword"></i>
+            </div>
             <!-- repeat password -->
             <label for="psw-repeat"><b>Confirm Password</b></label>
-            <input type="password" id="psw_repeat" name="psw_repeat" required>
+            <div class="seepassword">
+                <input type="password" id="psw_repeat" name="psw_repeat" required>
+                <i class="far fa-eye" id="togglePasswordrepeat"></i>
+            </div>
             <!-- admin -->
             <label for="admin"><b>Choose Admin Account</b></label>
               <select id="admin" name="admin" size="1" required>
@@ -114,6 +132,6 @@
       </main>
 
     
-    <script src="main.js"></script>
+    <script src="seepasssignup.js"></script>
   </body>
 </html>

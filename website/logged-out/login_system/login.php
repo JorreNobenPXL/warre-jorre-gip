@@ -22,7 +22,7 @@
     $resultsignup = mysqli_query($conn, $selectsignup);
     $resultadmin = mysqli_query($conn, $selectadmin);
 
-
+        
     if((mysqli_num_rows($resultsignup) > 0) || (mysqli_num_rows($resultadmin) > 0)){
         $_SESSION['username'] = $username;
         header('location:http://193.121.129.31/website/logged-in/home/home-logged-in.php');
@@ -30,7 +30,7 @@
         $error[] = 'Incorrect username, email or password!';
     }
 
-    }
+    }   
 
 ?>
 
@@ -46,6 +46,7 @@
     <title>Login</title>
     <link rel="icon" href="images/logo_tab.png">
     <link rel="stylesheet" href="css-login-system/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 </head>
 <body>
     <main>
@@ -63,14 +64,20 @@
                 <label for="username"><b>Username</b></label>
                 <input type="text" id="username" name="username" required>
                 <!-- email -->
-                <label class="label_email" for="email"><b>Email</b></label>
+                <label for="email"><b>Email</b></label>
                 <input type="email" id="email" name="useremail" required>
                 <!-- password -->
-                <label class="label_psw" for="psw"><b>Password</b></label>
-                <input type="password" id="psw" name="psw" required>
+                <label for="psw"><b>Password</b></label>
+                <div class="seepassword">
+                    <input type="password" id="psw" name="psw" required>
+                    <i class="far fa-eye" id="togglePassword"></i>
+                </div>
+                <div class="divforgotpass">
+                    <a href="http://193.121.129.31/website/logged-out/login_system/changepass.php" class="forgotpass">Forgot Password?</a>
+                </div>
                 <div class="buttons">
                     <!-- submit button -->
-                     <div class="submit">
+                    <div class="submit">
                     <input type="submit" name="submit" class="form-btn" value="Login">
                     </div>
                     <!-- cancel button -->
@@ -87,6 +94,6 @@
         </form>
     </main>
 
-    <script src="main.js"></script>
+    <script src="seepasslogin.js"></script>
 </body>
 </html>

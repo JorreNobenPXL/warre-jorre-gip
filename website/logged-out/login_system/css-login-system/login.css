@@ -45,9 +45,9 @@ label, input{
     justify-content: center;
     align-items: center ;
     margin: auto;
-}   
+} 
 
-#username, #email, #psw {
+#username, #email {
     background-color: #ffffff;
     border-color: #ffffff;
     width: 80%;
@@ -59,6 +59,39 @@ label, input{
     align-items: center;
     color: #ffffff;
     font-size: 10px;
+}
+
+.divforgotpass {
+    margin-bottom: 20px;
+}
+
+.divforgotpass a {
+    color: #00aeff;
+    font-size: 15px;
+}
+
+.forgotpass {
+    margin-left: 15px;
+}
+
+.seepassword {
+    position: relative;
+    background: none;
+}
+
+.seepassword input {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    width: 85%;
+}
+
+.fa-eye {
+    position: absolute;
+    background-color: #ffffff;
+    top: 24%;
+    right: 12%;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
 }
 
 .buttons {

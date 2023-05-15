@@ -21,6 +21,8 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.sql.Array;
+import java.util.ArrayList;
 
 public class BackgroundWorker extends AsyncTask<String,Void,String> {
     Context context;
@@ -28,6 +30,7 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
     BackgroundWorker(Context ctx){
         context = ctx;
     }
+
     @Override
     protected String doInBackground(String... params) {
         String login_url = params[0];
@@ -73,10 +76,16 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "iso-8859-1"));
             String result = "";
             String line = "";
-            Log.d("help1", result);
+            Log.d("help1", name);
             while ((line = bufferedReader.readLine()) != null) {
                 result += line;
             }
+
+            ArrayList<String> resultName = new ArrayList<>();
+            resultName.add(result);
+            resultName.add(name);
+            Log.d("kanker", resultName.get(0));
+            lickme(resultName);
 
             bufferedReader.close();
             inputStream.close();
@@ -109,8 +118,6 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
         if (result.equals("Connected Login Successful.. Welcome!")) {
             StatusLog = "true";
             Log.d("BackStatusTrue", StatusLog);
-            Intent Login = new Intent(context, Activity2.class);
-            context.startActivity(Login);
         } else if (result.equals("Connected Login not successfull")){
             StatusLog = "false";
             Log.d("BackStatusFalse", "Hello " + StatusLog);
@@ -140,6 +147,17 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
 
     public void LoginDialog(Context context) {
         this.context = context;
+    }
+
+    public void lickme(ArrayList<String> resultName) {
+        String result = resultName.get(0);
+        String name = resultName.get(1);
+        Log.d("LICKME", name);
+        if (result.equals("Connected Login Successful.. Welcome!")) {
+            Intent Login = new Intent(context, Activity2.class);
+            Login.putExtra("NAME", name);
+            context.startActivity(Login);
+        }
     }
 
 

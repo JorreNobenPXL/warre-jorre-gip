@@ -56,8 +56,8 @@
       }else{// als logged in ga terug naar home logged in
         $insert = "INSERT INTO checkout(lname, fname, username, useremail, event) VALUES('$lname', '$fname', '$username', '$useremail','$event')";
         mysqli_query($conn, $insert);
-        header('location:http://193.121.129.31/website/logged-out/home/home.html');
         mail($to, $subject, $message, $mailHead);
+        header('location:http://193.121.129.31/website/logged-out/home/home.html');
         }
       }
   }
@@ -108,11 +108,11 @@
               <!-- event selecter -->
               <label for="event"><b>Choose Event*</b></label>
               <select id="event" name="event" size="1" required>
-                <option value="Event1">Event 1</option>
-                <option value="Event2">Event 2</option>
-                <option value="Event3">Event 3</option>
-                <option value="Event4">Event 4</option>
-                <option value="Event5">Event 5</option>
+                <option value="Zillion">The Zillion</option>
+                <option value="PostXMosTISJ">Post X-MOS TISJ</option>
+                <option value="PreXMosIKSO">Pre X-MOS IKSO</option>
+                <option value="PreXMosHGI">Pre X-MOS HGI</option>
+                <option value="PreXMosTISJ">Pre X-MOS TISJ</option>
               </select>
               <!--checkbox  -->
               <label>

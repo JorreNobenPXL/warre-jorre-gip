@@ -29,12 +29,12 @@
 <body>
     <div class="navbar">
         <header>
-            <img class="logo" src="images/logo.png" alt="logo">
+        <a class="logo" href="http://193.121.129.31/website/logged-in/home/home-logged-in.php"><img src="images/logo.png" alt="logo"></a>
             <nav>
                 <ul class="nav_links">
                     <li><a href="http://193.121.129.31/website/logged-in/home/home-logged-in.php">Home</a></li>
                     <li><a href="http://193.121.129.31/website/logged-in/events/events.php">Events</a></li>
-                    <li><a href="http://193.121.129.31/website/logged-in/account/account.php">My Account</a></li>
+                    <li><a href="http://193.121.129.31/website/logged-in/account/account-under-construction.html">My Account</a></li>
                 </ul>
             </nav>
             <a href="http://193.121.129.31/website/logged-out/login_system/logout.php"><button class="nav_button">Logout</button></a>
@@ -46,27 +46,27 @@
 
             <div class="phone">
                 <div class="text-1">
-                    <h1>Koop hier nu je ticket en Download de app voor je ticket te laten scannen!</h1>
+                    <h1>Koop hier nu je ticket en download de app om je ticket te laten scannen!</h1>
                     <h4>Registreer je of log in voor alle events te zien</h4>
                 </div>
                 <img class="phone-pic" src="images/phone.png" alt="">
             </div>
             <div class="text-up-events">
-                <h1>Upcomming events</h1>
+                <h1>Upcoming events</h1>
             </div>
 
             <div class="events">
                 <div class="event-img">
-                    <a href="http://193.121.129.31/website/logged-in/events/events.php"><img src="images/events_img.png" alt=""></a>
-                    <h2 class="event-name">Event name 1</h2>
+                    <a href="http://193.121.129.31/website/logged-in/events/events.php"><img src="images/events_zillion.png" alt=""></a>
+                    <h2 class="event-name">The Zillion</h2>
+                </div>
+                <div class="event-img">
+                    <a href="http://193.121.129.31/website/logged-in/events/events.php"><img src="images/event_posttisj.png" alt=""></a>
+                    <h2 class="event-name">Post X-MOS TISJ</h2>
                 </div>
                 <div class="event-img">
                     <a href="http://193.121.129.31/website/logged-in/events/events.php"><img src="images/events_img.png" alt=""></a>
-                    <h2 class="event-name">Event name 2</h2>
-                </div>
-                <div class="event-img">
-                    <a href="http://193.121.129.31/website/logged-in/events/events.php"><img src="images/events_img.png" alt=""></a>
-                    <h2 class="event-name">Event name 3</h2>
+                    <h2 class="event-name">Pre X-MOS IKSO</h2>
                 </div>
             </div>
 

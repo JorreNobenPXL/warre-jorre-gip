@@ -30,12 +30,12 @@
 <body>
     <div class="navbar">
         <header>
-            <img class="logo" src="images/logo.png" alt="logo">
+        <a class="logo" href="http://193.121.129.31/website/logged-in/home/home-logged-in.php"><img src="images/logo.png" alt="logo"></a>
             <nav>
             <ul class="nav_links">
                     <li><a href="http://193.121.129.31/website/logged-in/home/home-logged-in.php">Home</a></li>
                     <li><a href="http://193.121.129.31/website/logged-in/events/events.php">Events</a></li>
-                    <li><a href="http://193.121.129.31/website/logged-in/account/account.php"><span>My Account</span></a></li>
+                    <li><a href="http://193.121.129.31/website/logged-in/account/account-under-construction.html"><span>My Account</span></a></li>
                 </ul>
             </nav>
             <a href="http://193.121.129.31/website/logged-out/login_system/logout.php"><button class="nav_button">Logout</button></a>
@@ -51,18 +51,18 @@
     <div class="events">
         <div class="event">
             <div class="event-img">
-                <img src="images/events_img.png" alt="">
+                <img src="images/events_zillion.png" alt="">
             </div>
             <div class="event-details">
                 <div class="event-text">
-                    <h1>Title event</h1>
-                    <h3>about event
+                <h1>The Zillion</h1>
+                    <h3>About event:
                         <br>
-                        --------------
+                        Voor de nieuwe Zillion film
                         <br>
-                        --------------
+                        21:00 - 06:00
                         <br>
-                        --------------
+                        Karrewiel Hoeselt
                     </h3>
                 </div>
                 <a href="http://193.121.129.31/website/checkout/checkout-contact-details.php"><button class="buy-ticket">Buy Ticket</button></a>
@@ -73,18 +73,18 @@
     <div class="events">
         <div class="event">
             <div class="event-img">
-                <img src="images/events_img.png" alt="">
+                <img src="images/event_posttisj.png" alt="">
             </div>
             <div class="event-details">
                 <div class="event-text">
-                    <h1>Title event</h1>
-                    <h3>about event
+                    <h1>Post X-MOS TISJ</h1>
+                    <h3>About event:
                         <br>
-                        --------------
+                        Post X-MOS van TISJ
                         <br>
-                        --------------
+                        21:00 - 03:00
                         <br>
-                        --------------
+                        Karrewiel Hoeselt
                     </h3>
                 </div>
                 <a href="http://193.121.129.31/website/checkout/checkout-contact-details.php"><button class="buy-ticket">Buy Ticket</button></a>
@@ -95,18 +95,18 @@
     <div class="events">
         <div class="event">
             <div class="event-img">
-                <img src="images/events_img.png" alt="">
+                <img src="images/event_preikso.png" alt="">
             </div>
             <div class="event-details">
                 <div class="event-text">
-                    <h1>Title event</h1>
-                    <h3>about event
+                    <h1>Pre X-MOS IKSO</h1>
+                    <h3>About event:
                         <br>
-                        --------------
+                        Pre X-MOS van IKSO
                         <br>
-                        --------------
+                        21:00 - 03:00
                         <br>
-                        --------------
+                        Karrewiel Hoeselt
                     </h3>
                 </div>
                 <a href="http://193.121.129.31/website/checkout/checkout-contact-details.php"><button class="buy-ticket">Buy Ticket</button></a>
@@ -117,18 +117,18 @@
     <div class="events">
         <div class="event">
             <div class="event-img">
-                <img src="images/events_img.png" alt="">
+                <img src="images/event_prehgi.png" alt="">
             </div>
             <div class="event-details">
                 <div class="event-text">
-                    <h1>Title event</h1>
-                    <h3>about event
+                    <h1>Pre X-MOS HGI</h1>
+                    <h3>About event:
                         <br>
-                        --------------
+                        Pre X-MOS van HGI
                         <br>
-                        --------------
+                        21:00 - 03:00
                         <br>
-                        --------------
+                        Karrewiel Hoeselt
                     </h3>
                 </div>
                 <a href="http://193.121.129.31/website/checkout/checkout-contact-details.php"><button class="buy-ticket">Buy Ticket</button></a>
@@ -139,18 +139,18 @@
     <div class="events">
         <div class="event">
             <div class="event-img">
-                <img src="images/events_img.png" alt="">
+                <img src="images/events_pretisj.png" alt="">
             </div>
             <div class="event-details">
                 <div class="event-text">
-                    <h1>Title event</h1>
-                    <h3>about event
+                <h1>Pre X-MOS TISJ</h1>
+                    <h3>About event:
                         <br>
-                        --------------
+                        Pre X-MOS van TISJ
                         <br>
-                        --------------
+                        21:00 - 03:00
                         <br>
-                        --------------
+                        Karrewiel Hoeselt
                     </h3>
                 </div>
                 <a href="http://193.121.129.31/website/checkout/checkout-contact-details.php"><button class="buy-ticket">Buy Ticket</button></a>

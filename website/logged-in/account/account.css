@@ -67,50 +67,14 @@ header {
     background-color: rgba(0,136,169,0.8);
 }
 
-.text-account {
+.text {
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin-top: 7rem;
+    margin-top: 350px;
     color: #ffffff;
-    font-size: 175%;
+    font-size: 375%;
     text-transform: uppercase;
 }
-
-.settings {
-    margin-top: 4rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.text-account, .tabel-left .tabel-right {
-    display: flex;
-    flex-direction: column;
-}
-
-.tabel-left, .tabel-right {
-    display: flex;
-    flex-direction: row;
-    margin: 0px 0px;
-    color: #ffffff;
-}
-
-.name, .email, .psw {
-    border: 2px solid #000000;
-    padding: 20px 50px;
-}
-
-.tabel-left {
-    display: flex;
-    flex-direction: column;
-}
-
-.tabel-right {
-    display: flex;
-    flex-direction: column;
-}
-
 
 
 
@@ -118,7 +82,7 @@ header {
 /* -------------------------------------------footer---------------------------------------- */
 
 .footer-section {
-    min-height: 25vh;
+    min-height: 54vh;
     display: flex;
     flex-direction: column;
 }

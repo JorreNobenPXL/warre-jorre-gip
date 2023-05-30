@@ -102,7 +102,7 @@ header {
     color: #ffffff;
 }
 
-.buy-ticket {
+.get-ticket {
     padding: 8px 25px;
     background-color: rgba(0,136,169,1);
     border: none;
@@ -114,7 +114,7 @@ header {
     transition: all 0.3 ease 0S;
 }
 
-.buy-ticket:hover {
+.get-ticket:hover {
     background-color: rgba(0,136,169,0.8);
 }
 

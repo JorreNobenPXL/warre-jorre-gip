@@ -14,8 +14,8 @@
 
     $username = mysqli_real_escape_string($conn, $_POST['username']);  
     $useremail = mysqli_real_escape_string($conn, $_POST['useremail']);
-    $psw = md5($_POST['psw']);
-    $psw_repeat = md5($_POST['psw_repeat']);
+    $psw = mysqli_real_escape_string($conn, $_POST['psw']);
+    $psw_repeat = mysqli_real_escape_string($conn, $_POST['psw_repeat']);
     $admin = mysqli_real_escape_string($conn, $_POST['admin']);
 
 
@@ -34,14 +34,14 @@
 
 
 
-    if((mysqli_num_rows($resultUsernameSignup)>0) || (mysqli_num_rows($resultUsernameAdmin)>0)){
+    if((mysqli_num_rows($resultUsernameSignup) > 0) || (mysqli_num_rows($resultUsernameAdmin) > 0)){
       $error[] = 'User already used!';
     }else{
-      if((mysqli_num_rows($resultUseremailSignup)>0) || (mysqli_num_rows($resultUseremailAdmin)>0)){
+      if((mysqli_num_rows($resultUseremailSignup) > 0) || (mysqli_num_rows($resultUseremailAdmin) > 0)){
         $error[] = 'Email already used!';
       }else{
         if($psw != $psw_repeat){
-          $error[] = 'Password not mathched!';
+          $error[] = 'Passwords do not match!';
           }else{
             if(isset($admin) && $admin == 'Yes'){
               $insert = "INSERT INTO admin(username, useremail, psw, admin) VALUES('$username', '$useremail', '$psw', '$admin')";
@@ -132,6 +132,6 @@
       </main>
 
     
-    <script src="seepasssignup.js"></script>
+    <script src="js-files/seepasssignup.js"></script>
   </body>
 </html>

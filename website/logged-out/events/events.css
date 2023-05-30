@@ -10,7 +10,7 @@
     font-weight: 500;
 }
 
-li, a , .nav_button {
+li, a , .nav_button, .nav_button2 {
     font-family: 'Roboto Mono', monospace;
     font-weight: 500;
     font-size: 16px;
@@ -63,7 +63,18 @@ header {
     transition: all 0.3 ease 0S;
 }
 
-.nav_button:hover {
+.nav_button2 {
+    padding: 9px 25px;
+    margin-left: 9px;
+    background-color: rgba(0,136,169,1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3 ease 0S;
+    
+}
+
+.nav_button:hover, .nav_button2:hover {
     background-color: rgba(0,136,169,0.8);
 }
 
@@ -102,7 +113,7 @@ header {
     color: #ffffff;
 }
 
-.buy-ticket {
+.get-ticket {
     padding: 8px 25px;
     background-color: rgba(0,136,169,1);
     border: none;
@@ -114,7 +125,7 @@ header {
     transition: all 0.3 ease 0S;
 }
 
-.buy-ticket:hover {
+.get-ticket:hover {
     background-color: rgba(0,136,169,0.8);
 }
 

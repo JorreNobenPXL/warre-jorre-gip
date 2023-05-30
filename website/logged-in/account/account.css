@@ -67,13 +67,43 @@ header {
     background-color: rgba(0,136,169,0.8);
 }
 
-.text {
+.text-account {
     display: flex;
     justify-content: center;
-    margin-top: 350px;
+    margin-top: 120px;
     color: #ffffff;
-    font-size: 375%;
+    font-size: 175%;
     text-transform: uppercase;
+}
+
+.account-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+
+.account-table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.col1, .col2 {
+    border: 4px solid #808080;
+    padding: 20px;
+    width: 400px;
+    color: #ffffff;
+    font-size: 125%;
+}
+.qr-code {
+    width: 350px;
+    height: 350px;
+}
+
+.changepass {
+    color: #00aeff;
+    font-size: 15px;
 }
 
 
@@ -82,7 +112,7 @@ header {
 /* -------------------------------------------footer---------------------------------------- */
 
 .footer-section {
-    min-height: 54vh;
+    min-height: 36vh;
     display: flex;
     flex-direction: column;
 }

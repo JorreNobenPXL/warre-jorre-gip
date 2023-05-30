@@ -12,8 +12,7 @@
 
     if(isset($_POST['submit'])){
 
-    $username = mysqli_real_escape_string($conn, $_POST['username']);    
-    $oldpass = mysqli_real_escape_string($conn, $_POST['oldpass']);
+    $username = mysqli_real_escape_string($conn, $_POST['username']);  
     $newpass = mysqli_real_escape_string($conn, $_POST['newpass']);
     $confirmpass = mysqli_real_escape_string($conn, $_POST['confirmpass']);
 
@@ -25,12 +24,12 @@
 
         if($newpass != $confirmpass){
             $error[] = 'Passwords do not match!';
-        }else{ 
+        }else{
             if(($resultsignup) || ($resultadmin)){
                 header('location:http://193.121.129.31/website/logged-in/account/account.php');
             }else{
-                $error[] = 'Incorrect username or old password!';
-            }
+                $error[] = 'Incorrect username!';
+            } 
         }       
     }   
 
@@ -45,16 +44,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Change Pass</title>
+    <title>Forgot Pass</title>
     <link rel="icon" href="images/logo_tab.png">
-    <link rel="stylesheet" href="css-login-system/changepass.css">
+    <link rel="stylesheet" href="css-login-system/forgotpass.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
 </head>
 <body>
     <main>
-        <form action="" method="post" id="changepassform" name="changepassform">
+        <form action="" method="post" id="forgotpassform" name="gorgotpassform">
             <div>
-                <h1>Change Password</h1>
+                <h1>Forgot Password</h1>
                 <?php
                     if(isset($error)){
                         foreach($error as $error){
@@ -65,12 +65,6 @@
                 <!-- username -->
                 <label for="username"><b>Username</b></label>
                 <input type="text" id="username" name="username" required>
-                <!-- oldpass -->
-                <label for="oldpass"><b>Old Password</b></label>
-                <div class="seepassword">
-                    <input type="password" id="oldpass" name="oldpass" required>
-                    <i class="far fa-eye" id="togglePasswordold"></i>
-                </div>
                 <!-- newpass -->
                 <label for="newpass"><b>New Password</b></label>
                 <div class="seepassword">
@@ -90,7 +84,7 @@
                     </div>
                     <!-- cancel button -->
                     <div class="cancel">
-                    <a class="form-btn-cancel" href="http://193.121.129.31/website/logged-in/account/account.php">Cancel</a>
+                    <a class="form-btn-cancel" href="http://193.121.129.31/website/logged-out/login_system/login.php">Cancel</a>
                     </div>
                 </div>
                
@@ -99,6 +93,6 @@
         </form>
     </main>
 
-    <script src="js-files/seepasschange.js"></script>
+    <script src="js-files/seepassforgot.js"></script>
 </body>
 </html>

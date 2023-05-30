@@ -14,7 +14,7 @@
         
     $username = mysqli_real_escape_string($conn, $_POST['username']);
     $useremail = mysqli_real_escape_string($conn, $_POST['useremail']);
-    $psw = md5($_POST['psw']);
+    $psw = mysqli_real_escape_string($conn, $_POST['psw']);
 
     $selectsignup = "SELECT * FROM signup WHERE username = '$username' && useremail = '$useremail' && psw = '$psw'";
     $selectadmin = "SELECT * FROM admin WHERE username = '$username' && useremail = '$useremail' && psw = '$psw'";
@@ -73,7 +73,7 @@
                     <i class="far fa-eye" id="togglePassword"></i>
                 </div>
                 <div class="divforgotpass">
-                    <a href="http://193.121.129.31/website/logged-out/login_system/changepass.php" class="forgotpass">Forgot Password?</a>
+                    <a href="http://193.121.129.31/website/logged-out/login_system/forgotpass.php" class="forgotpass">Forgot Password?</a>
                 </div>
                 <div class="buttons">
                     <!-- submit button -->
@@ -94,6 +94,6 @@
         </form>
     </main>
 
-    <script src="seepasslogin.js"></script>
+    <script src="js-files/seepasslogin.js"></script>
 </body>
 </html>

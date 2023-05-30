@@ -11,38 +11,26 @@
   session_start();
 
   
-   $username = $_SESSION['username'];
+    $username = $_SESSION['username'];
 
-   $getdataSignup = "SELECT * FROM signup WHERE username = '$username'";
+    $getdataSignup = "SELECT * FROM signup WHERE username = '$username'";
+    $getdataAdmin = "SELECT * FROM admin WHERE username = '$username'";
 
+    $resSignup = mysqli_query($conn, $getdataSignup);
+    $resAdmin = mysqli_query($conn, $getdataAdmin);
 
-   $resSignup = mysqli_query($conn, $getdataSignup);
+    $getUseremail = "SELECT useremail FROM checkout WHERE username = '$username'";
+    $getEvent = "SELECT event FROM checkout WHERE username = '$username'";
 
-   if(mysqli_num_rows($resSignup) > 0)
-        {
-            foreach($resSignup as $row)
-            {
-                ?>
-                <tr>
-                    <td><?= $row['username']; ?></td>
-                    <td><?= $row['useremail']; ?></td>
-                    <td><?= $row['psw']; ?></td>
-                    <td><?= $row['admin']; ?></td>
-                </tr>
-                <?php
-            }
-        }
-        else
-        {
-            ?>
-                <tr>
-                    <td>You don't have this.</td>
-                </tr>
-            <?php
-        }
+    $resultUseremail = mysqli_query($conn, $getUseremail);
+    $resultEvent = mysqli_query($conn, $getEvent);
+
+        
+
 
 ?>
-<!-- 
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -50,7 +38,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Events</title>
+    <title>Account</title>
     <link rel="icon" href="images/logo_tab.png">
     <link rel="stylesheet" href="account.css">
 </head> 
@@ -69,6 +57,152 @@
         </header>
     </div>
 
+    <div class="text-account">
+        <h1>Account Details</h1>
+    </div>
+
+    <div class="account-info">
+    <?php 
+        if(mysqli_num_rows($resSignup) > 0 ){
+            foreach($resSignup as $rowSignup) {  
+                ?>
+                <div class="tables">
+                    <table class="account-table">
+                        <tr>
+                            <td class="col1">Username:</td>
+                            <td class="col2"><?= $rowSignup['username']; ?></>
+                        </tr>
+                        <tr>
+                            <td class="col1">Email:</td>
+                            <td class="col2"><?= $rowSignup['useremail']; ?></>
+                        </tr>
+                        <tr>
+                            <td class="col1">Password:</td>
+                            <td class="col2"><?= $rowSignup['psw']; ?>
+                            <p><a href="http://193.121.129.31/website/logged-out/login_system/changepass.php" class="changepass">Change Password?</a></p>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td class="col1">Admin Account:</td>
+                            <td class="col2"><?= $rowSignup['admin']; ?></>
+                        </tr>
+                        <?php
+                           
+                           if (($rowUseremail = mysqli_fetch_assoc($resultUseremail)) && ($rowEvent = mysqli_fetch_assoc($resultEvent))) {
+                            $useremail = $rowUseremail['useremail'];
+                            $event = $rowEvent['event'];
+                           
+                            if ($useremail !== null && $event !== null) {
+                                $myBarcodeDir = 'website/generated_barcode/';
+                                $fileName = $useremail . "_" . $event . '.png';
+                                $pngAbsoluteFilePath = $myBarcodeDir . $fileName;
+                                ?>
+                                <tr>
+                                    <td class="col1">QR-Code:</td>
+                                    <td class="col2"><img class="qr-code" src='http://193.121.129.31/<?= $pngAbsoluteFilePath ?>'/></td>
+                                </tr>
+                                <?php
+                            } else {
+                                ?>
+                                <tr>
+                                    <td class="col1">QR-Code:</td>
+                                    <td class="col2">No Record Found</td>
+                                </tr>
+                                <?php
+                            }
+                        }
+                        ?>
+                    </table>
+                    
+                </div>
+                <?php
+                }
+                }else{
+                    if(mysqli_num_rows($resAdmin) > 0 ){
+                        foreach($resAdmin as $rowAdmin) {  
+                            ?>
+                            <div class="tables">
+                                <table class="account-table">
+                                    <tr>
+                                        <td class="col1">Username:</td>
+                                        <td class="col2"><?= $rowAdmin['username']; ?></>
+                                    </tr>
+                                    <tr>
+                                        <td class="col1">Email:</td>
+                                        <td class="col2"><?= $rowAdmin['useremail']; ?></>
+                                    </tr>
+                                    <tr>
+                                        <td class="col1">Password:</td>
+                                        <td class="col2"><?= $rowAdmin['psw']; ?>
+                                        <p><a href="http://193.121.129.31/website/logged-out/login_system/changepass.php" class="changepass">Change Password?</a></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col1">Admin Account:</td>
+                                        <td class="col2"><?= $rowAdmin['admin']; ?></>
+                                    </tr>
+                                    <?php
+                                       
+                                       if (($rowUseremail = mysqli_fetch_assoc($resultUseremail)) && ($rowEvent = mysqli_fetch_assoc($resultEvent))) {
+                                        $useremail = $rowUseremail['useremail'];
+                                        $event = $rowEvent['event'];
+                                       
+                                        if ($useremail !== null && $event !== null) {
+                                            $myBarcodeDir = 'website/generated_barcode/';
+                                            $fileName = $useremail . "_" . $event . '.png';
+                                            $pngAbsoluteFilePath = $myBarcodeDir . $fileName;
+                                            ?>
+                                            <tr>
+                                                <td class="col1">QR-Code:</td>
+                                                <td class="col2"><img class="qr-code" src='http://193.121.129.31/<?= $pngAbsoluteFilePath ?>'/></td>
+                                            </tr>
+                                            <?php
+                                        } else {
+                                            ?>
+                                            <tr>
+                                                <td class="col1">QR-Code:</td>
+                                                <td class="col2">No Record Found</td>
+                                            </tr>
+                                            <?php
+                                        }
+                                    }
+                                    ?>
+                                </table>
+                                
+                            </div>
+                            <?php
+                        }
+                    }else{
+                        ?>
+                            <table class="account-table">
+                                <tr>
+                                    <td class="col1">Username:</td>
+                                    <td class="col2">No Record Found</td>
+                                </tr>
+                                <tr>
+                                    <td class="col1">Email:</td>
+                                    <td class="col2">No Record Found</td>
+                                </tr>
+                                <tr>
+                                    <td class="col1">Password:</td>
+                                    <td class="col2">No Record Found</td>
+                                </tr>
+                                <tr>
+                                    <td class="col1">Admin Account:</td>
+                                    <td class="col2">No Record Found</td>
+                                </tr>
+                                <tr>
+                                    <td class="col1">QR-Code:</td>
+                                    <td class="col2">No Record Found</td>
+                                </tr>
+                            </table>
+                        <?php
+                    }
+                }
+                
+    ?>
+    </div>
+
 
 
     
@@ -84,4 +218,4 @@
 
     <script src="main.js"></script>
 </body>
-</html> -->
+</html>

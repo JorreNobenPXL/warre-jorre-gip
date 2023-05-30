@@ -23,7 +23,7 @@
 
     // qrcode generate
     require "phpqrcode/qrlib.php";
-    $codeContents = $fname . " " . $lname . " " . $event;
+    $codeContents = $username . " " . $fname . " " . $lname . " " . $event;
     $myBarcodeDir = '../generated_barcode/';
     $fileName = $useremail."_".$event.'.png';
     $pngAbsoluteFilePath = $myBarcodeDir.$fileName;
@@ -53,7 +53,7 @@
     }else{ 
       if($useremail != $verify_email){
         $error[] = 'Email not mathched!';
-      }else{// als logged in ga terug naar home logged in
+      }else{
         $insert = "INSERT INTO checkout(lname, fname, username, useremail, event) VALUES('$lname', '$fname', '$username', '$useremail','$event')";
         mysqli_query($conn, $insert);
         mail($to, $subject, $message, $mailHead);
@@ -73,8 +73,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout</title>
     <link rel="icon" href="images/logo_tab.png">
-    <link rel="stylesheet" href="checkout.css">
-    
+    <link rel="stylesheet" href="checkout.css">   
 </head>
 <body>
     <main>
@@ -114,10 +113,6 @@
                 <option value="PreXMosHGI">Pre X-MOS HGI</option>
                 <option value="PreXMosTISJ">Pre X-MOS TISJ</option>
               </select>
-              <!--checkbox  -->
-              <label>
-                <input type="checkbox" name="checkbox-tp" id="checkbox-tp" required><p>  I have read and accept the </p><a href="#" style="color:dodgerblue">Terms & Privacy.</a>
-              </label>
               <p>*required</p>
               <div class="buttons">
                     <!-- submit button -->

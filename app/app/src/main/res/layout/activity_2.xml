@@ -9,11 +9,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginBottom="345dp"
-        android:layout_marginRight="0dp"
-        android:background="#00FFFF"
+        android:background="@drawable/loggedin"
         />
 
     <TextView
@@ -45,49 +41,21 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/UpcommingEvent"
-        android:text="Upcomming Event:"
-        android:textColor="@color/black"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="390dp"
-        android:textSize="20dp"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/ViewEventQR"
-        android:text="View Event QR Codes:"
+        android:text="View QR Codes:"
+        android:textColor="@color/white"
+        android:layout_marginTop="320dp"
         android:textSize="25dp"
-        android:layout_marginTop="250dp"
-        android:textColor="@color/black"
-        />
-
+    />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="280dp"
-        android:layout_marginLeft="50dp"
-        android:text="View QR"
-
+        android:id="@+id/QRCODEButton"
+        android:drawableLeft="@drawable/ic_baseline_qr_code_24"
+        android:layout_marginTop="350dp"
+        android:text="QRCodes"
+        android:textColor="@color/black"
         />
 
-    <ImageView
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:src="@drawable/ic_baseline_settings_24"
-        android:layout_marginLeft="375dp"
-        android:layout_marginTop="10dp"
-        />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/ZillionImge"
-        android:src="@drawable/events_zillion"
-        android:layout_marginTop="425dp"
-        android:layout_centerHorizontal="true"
-        />
 
 
 

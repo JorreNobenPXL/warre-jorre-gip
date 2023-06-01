@@ -5,10 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.Log;
-import android.widget.Toast;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -21,7 +17,6 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
-import java.sql.Array;
 import java.util.ArrayList;
 
 public class BackgroundWorker2 extends AsyncTask<String,Void,String> {
@@ -36,7 +31,7 @@ public class BackgroundWorker2 extends AsyncTask<String,Void,String> {
         String login_url = params[0];
         String type = params[1];
         String name = params[2];
-        //String username = params[3];
+        String username = params[3];
         //String password = params[4];
         try {
 
@@ -50,7 +45,8 @@ public class BackgroundWorker2 extends AsyncTask<String,Void,String> {
 
             String post_data = "";
             if(type.equals("GetQR")) {
-                post_data = URLEncoder.encode("username", "UTF-8") + "=" + URLEncoder.encode(name, "UTF-8");
+                post_data = URLEncoder.encode("username", "UTF-8") + "=" + URLEncoder.encode(name, "UTF-8") + "&"
+                        + URLEncoder.encode("event", "UTF-8") + "=" + URLEncoder.encode(username, "UTF-8");
             }
 
             bufferedWriter.write(post_data);
@@ -70,7 +66,7 @@ public class BackgroundWorker2 extends AsyncTask<String,Void,String> {
             resultName.add(result);
             resultName.add(name);
             Log.d("kanker", resultName.get(0));
-            //lickme(resultName);
+            lickme(resultName);
 
             bufferedReader.close();
             inputStream.close();
@@ -95,10 +91,9 @@ public class BackgroundWorker2 extends AsyncTask<String,Void,String> {
 
     }
 
-    @Override
     protected void onPostExecute(String result) {
-        alertDialog.setMessage(result);
-        alertDialog.show();
+        //alertDialog.setMessage(result);
+        //alertDialog.show();
     }
     @Override
     protected void onProgressUpdate(Void... values) {
@@ -112,14 +107,9 @@ public class BackgroundWorker2 extends AsyncTask<String,Void,String> {
     public void lickme(ArrayList<String> resultName) {
         String result = resultName.get(0);
         String name = resultName.get(1);
-        Log.d("LICKME", name);
-        if (result.equals("Connected Login Successful.. Welcome!")) {
-            Intent Login = new Intent(context, Activity2.class);
-            Login.putExtra("NAME", name);
-            context.startActivity(Login);
-        }
-    }
 
+
+    }
 
 }
 

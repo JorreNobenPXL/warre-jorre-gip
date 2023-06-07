@@ -9,8 +9,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import androidmads.library.qrgenearator.QRGContents;
-import androidmads.library.qrgenearator.QRGEncoder;
 
 public class QRCodePage extends AppCompatActivity {
 
@@ -33,8 +31,7 @@ public class QRCodePage extends AppCompatActivity {
         QRCodeZillion = findViewById(R.id.ZillionQR);
         QRCodePostTisj = findViewById(R.id.PostTisjQR);
         
-        Bitmap bitmap;
-        QRGencoder qrgEncoder;
+
 
         QRCodeZillion.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,9 +44,6 @@ public class QRCodePage extends AppCompatActivity {
                 String username = intent.getStringExtra("NAME");
                 BackgroundWorker2 backgroundWorker2 = new BackgroundWorker2(QRCodePage.this);
                 backgroundWorker2.execute(url, type, username, event);
-
-
-
             }
         });
     }

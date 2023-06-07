@@ -65,6 +65,7 @@ public class BackgroundWorker2 extends AsyncTask<String,Void,String> {
             ArrayList<String> resultName = new ArrayList<>();
             resultName.add(result);
             resultName.add(name);
+            resultName.add(username);
             Log.d("kanker", resultName.get(0));
             lickme(resultName);
 
@@ -92,9 +93,10 @@ public class BackgroundWorker2 extends AsyncTask<String,Void,String> {
     }
 
     protected void onPostExecute(String result) {
-        //alertDialog.setMessage(result);
-        //alertDialog.show();
+        alertDialog.setMessage(result);
+        alertDialog.show();
     }
+
     @Override
     protected void onProgressUpdate(Void... values) {
         super.onProgressUpdate(values);
@@ -107,6 +109,14 @@ public class BackgroundWorker2 extends AsyncTask<String,Void,String> {
     public void lickme(ArrayList<String> resultName) {
         String result = resultName.get(0);
         String name = resultName.get(1);
+        String event = resultName.get(2)
+
+        if (result.equals("Current Event: Zillion")) {
+
+
+
+        }
+
 
 
     }

@@ -152,8 +152,9 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
     public void lickme(ArrayList<String> resultName) {
         String result = resultName.get(0);
         String name = resultName.get(1);
-        Log.d("LICKME", name);
-        if (result.equals("Connected Login Successful.. Welcome!")) {
+        Log.d("LICKME", result);
+        if (result.equals("Connected Login Successfull.. Welcome!")){
+            Log.d("kanker", "kanker");
             Intent Login = new Intent(context, Activity2.class);
             Login.putExtra("NAME", name);
             context.startActivity(Login);

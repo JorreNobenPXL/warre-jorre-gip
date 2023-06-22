@@ -84,8 +84,7 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
             ArrayList<String> resultName = new ArrayList<>();
             resultName.add(result);
             resultName.add(name);
-            Log.d("kanker", resultName.get(0));
-            lickme(resultName);
+            Validator(resultName);
 
             bufferedReader.close();
             inputStream.close();
@@ -149,10 +148,9 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
         this.context = context;
     }
 
-    public void lickme(ArrayList<String> resultName) {
+    public void Validator(ArrayList<String> resultName) {
         String result = resultName.get(0);
         String name = resultName.get(1);
-        Log.d("LICKME", result);
         if (result.equals("Connected Login Successfull.. Welcome!")){
             Log.d("kanker", "kanker");
             Intent Login = new Intent(context, Activity2.class);

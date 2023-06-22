@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/page2"
+    tools:context=".page2">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/PreIksoQR"
+        android:drawableLeft="@drawable/ic_baseline_qr_code_24"
+        android:text="QR-CODE"
+        android:textColor="@color/black"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="375dp"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/PostHgiQR"
+        android:drawableLeft="@drawable/ic_baseline_qr_code_24"
+        android:text="QR-CODE"
+        android:textColor="@color/black"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/PreIksoQR"
+        android:layout_marginTop="250dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Page2Number"
+        android:text="2"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="775dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Page2Next"
+        android:text=">"
+        android:textSize="30dp"
+        android:textColor="@color/white"
+        android:layout_marginLeft="215dp"
+        android:layout_marginTop="767dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Page2Prev"
+        android:text="B"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:layout_marginLeft="185dp"
+        android:layout_marginTop="775dp"
+        />
+
+</RelativeLayout>

@@ -66,8 +66,7 @@ public class BackgroundWorker2 extends AsyncTask<String,Void,String> {
             resultName.add(result);
             resultName.add(name);
             resultName.add(username);
-            Log.d("kanker", resultName.get(0));
-            lickme(resultName);
+            Validator(resultName);
 
             bufferedReader.close();
             inputStream.close();
@@ -93,8 +92,10 @@ public class BackgroundWorker2 extends AsyncTask<String,Void,String> {
     }
 
     protected void onPostExecute(String result) {
-        alertDialog.setMessage(result);
-        alertDialog.show();
+        if (result.equals("This Event is not registered under your name!")) {
+            alertDialog.setMessage(result);
+            alertDialog.show();
+        }
     }
 
     @Override
@@ -106,19 +107,17 @@ public class BackgroundWorker2 extends AsyncTask<String,Void,String> {
         this.context = context;
     }
 
-    public void lickme(ArrayList<String> resultName) {
+    public void Validator(ArrayList<String> resultName) {
         String result = resultName.get(0);
         String name = resultName.get(1);
-        String event = resultName.get(2)
+        String event = resultName.get(2);
 
-        if (result.equals("Current Event: Zillion")) {
-
-
-
+        if (!result.equals("This Event is not registered under your name!")){
+            Intent QRCode = new Intent(context, QRCode.class);
+            QRCode.putExtra("NAME", name);
+            QRCode.putExtra("EVENT", event);
+            context.startActivity(QRCode);
         }
-
-
-
     }
 
 }

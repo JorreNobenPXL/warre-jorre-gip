@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -30,6 +31,9 @@ public class QRCodePage extends AppCompatActivity {
         QRNextPage = findViewById(R.id.Page1Next);
         QRCodeZillion = findViewById(R.id.ZillionQR);
         QRCodePostTisj = findViewById(R.id.PostTisjQR);
+
+        Intent intent = getIntent();
+        String username = intent.getStringExtra("NAME");
         
 
 
@@ -41,7 +45,8 @@ public class QRCodePage extends AppCompatActivity {
                 String type = "GetQR";
                 String event = "Zillion";
                 String empty = "";
-                String username = intent.getStringExtra("NAME");
+                //String username = intent.getStringExtra("NAME");
+                Log.d("username", username);
                 BackgroundWorker2 backgroundWorker2 = new BackgroundWorker2(QRCodePage.this);
                 backgroundWorker2.execute(url, type, username, event);
             }
@@ -53,9 +58,10 @@ public class QRCodePage extends AppCompatActivity {
                 Intent intent = getIntent();
                 String url = "http://193.121.129.31/GIP-2022/getQRCode.php";
                 String type = "GetQR";
-                String event = "PreXMosTISJ";
+                String event = "PostXMosTISJ";
                 String empty = "";
-                String username = intent.getStringExtra("NAME");
+                //String username = intent.getStringExtra("NAME");
+                Log.d("username", username);
                 BackgroundWorker2 backgroundWorker2 = new BackgroundWorker2(QRCodePage.this);
                 backgroundWorker2.execute(url, type, username, event);
             }
@@ -65,7 +71,7 @@ public class QRCodePage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = getIntent();
-                String username = intent.getStringExtra("NAME");
+                //String username = intent.getStringExtra("NAME");
                 Intent page2 = new Intent(getApplicationContext(), page2.class);
                 page2.putExtra("NAME", username);
                 startActivity(page2);

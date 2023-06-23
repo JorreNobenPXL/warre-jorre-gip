@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -133,9 +134,8 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
             alertDialog.show();
         }
         else if (result.equals(" Username is allready in use! Email allready used!")){
-            result = "Email is already in use!";
-            alertDialog.setMessage(result);
-            alertDialog.show();
+            StatusLog = "true";
+            Log.d("BackStatusTrue", StatusLog);
         }
 
     }
@@ -157,6 +157,11 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
             Login.putExtra("NAME", name);
             context.startActivity(Login);
         }
+        else if (result.equals("Connected Login Succesfull Admin")){
+            Intent cameraIntent = new Intent(MediaStore.INTENT_ACTION_STILL_IMAGE_CAMERA);
+            context.startActivity(cameraIntent);
+        }
+
     }
 
 

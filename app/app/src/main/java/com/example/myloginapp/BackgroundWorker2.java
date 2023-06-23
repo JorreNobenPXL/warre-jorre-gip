@@ -111,6 +111,7 @@ public class BackgroundWorker2 extends AsyncTask<String,Void,String> {
         String result = resultName.get(0);
         String name = resultName.get(1);
         String event = resultName.get(2);
+        Log.d("QRCODE WORKER2", result);
 
         if (!result.equals("This Event is not registered under your name!")){
             Intent QRCode = new Intent(context, QRCode.class);

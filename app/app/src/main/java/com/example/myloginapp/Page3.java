@@ -24,6 +24,9 @@ public class Page3 extends AppCompatActivity {
         QRPrevPage = findViewById(R.id.Page3Prev);
         QRPreTISJ = findViewById(R.id.PreTisjQR);
 
+        Intent intent = getIntent();
+        String username = intent.getStringExtra("NAME");
+
         QRPreTISJ.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -31,7 +34,6 @@ public class Page3 extends AppCompatActivity {
                 String url = "http://193.121.129.31/GIP-2022/getQRCode.php";
                 String type = "GetQR";
                 String event = "PreXMosTISJ";
-                String empty = "";
                 String username = intent.getStringExtra("NAME");
                 BackgroundWorker2 backgroundWorker2 = new BackgroundWorker2(Page3.this);
                 backgroundWorker2.execute(url, type, username, event);

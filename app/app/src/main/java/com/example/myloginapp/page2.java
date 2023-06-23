@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.pdf.PdfDocument;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -36,6 +37,9 @@ public class page2 extends AppCompatActivity {
         QRPreIKSO = findViewById(R.id.PreIksoQR);
         QRPostHGI = findViewById(R.id.PostHgiQR);
 
+        Intent intent = getIntent();
+        String username = intent.getStringExtra("NAME");
+
         QRPreIKSO.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,6 +49,7 @@ public class page2 extends AppCompatActivity {
                 String event = "PreXMosIKSO";
                 String empty = "";
                 String username = intent.getStringExtra("NAME");
+                Log.d("username", username);
                 BackgroundWorker2 backgroundWorker2 = new BackgroundWorker2(page2.this);
                 backgroundWorker2.execute(url, type, username, event);
             }
@@ -59,6 +64,7 @@ public class page2 extends AppCompatActivity {
                 String event = "PreXMosHGI";
                 String empty = "";
                 String username = intent.getStringExtra("NAME");
+                Log.d("username", username);
                 BackgroundWorker2 backgroundWorker2 = new BackgroundWorker2(page2.this);
                 backgroundWorker2.execute(url, type, username, event);
             }
